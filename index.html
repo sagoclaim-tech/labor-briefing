@@ -6,14 +6,7 @@
 <title>청아노무법인 주간 브리핑</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
-  :root {
-    --bg:#F5F4F0;--surface:#FFFFFF;--text-primary:#1A1A1A;
-    --text-secondary:#5A5A5A;--text-muted:#9A9A9A;--border:#E5E3DC;
-    --accent-red:#C0392B;--accent-amber:#B8860B;--accent-blue:#1A5276;
-    --accent-green:#1E6B41;--accent-purple:#6C3483;--firm-blue:#1A4FA0;
-    --tag-red-bg:#FDF0EE;--tag-amber-bg:#FDF8EE;--tag-blue-bg:#EEF3FD;
-    --tag-green-bg:#EEF8F3;--tag-purple-bg:#F5EEF8;
-  }
+  :root{--bg:#F5F4F0;--surface:#FFFFFF;--text-primary:#1A1A1A;--text-secondary:#5A5A5A;--text-muted:#9A9A9A;--border:#E5E3DC;--accent-amber:#B8860B;--accent-blue:#1A5276;--accent-green:#1E6B41;--accent-purple:#6C3483;--firm-blue:#1A4FA0;--tag-amber-bg:#FDF8EE;--tag-blue-bg:#EEF3FD;--tag-green-bg:#EEF8F3;--tag-purple-bg:#F5EEF8}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);font-family:'Noto Sans KR',sans-serif;color:var(--text-primary);min-height:100vh;padding:32px 16px 60px}
   .wrapper{max-width:520px;margin:0 auto}
@@ -30,29 +23,28 @@
   .tab-btn{font-size:10px;font-weight:700;padding:5px 10px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
   .tab-btn:hover{border-color:var(--text-primary);color:var(--text-primary)}
   .tab-btn.active{background:var(--text-primary);color:#fff;border-color:var(--text-primary)}
-  .tab-panel{display:none}
-  .tab-panel.active{display:block}
+  .tab-panel{display:none}.tab-panel.active{display:block}
   .card{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:16px 18px;margin-bottom:10px;text-decoration:none;display:block;color:inherit;transition:transform .15s ease,box-shadow .15s ease}
   .card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
-  .card-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .card-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
   .tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
-  .tag-issue{background:var(--tag-red-bg);color:var(--accent-red)}
+  .tag-hot{background:#FDF0EE;color:#C0392B}
   .tag-case{background:var(--tag-amber-bg);color:var(--accent-amber)}
+  .tag-interp{background:#FEF9E7;color:#7D6608}
   .tag-policy{background:var(--tag-blue-bg);color:var(--accent-blue)}
-  .tag-safe{background:var(--tag-green-bg);color:var(--accent-green)}
+  .tag-issue{background:#FDF0EE;color:#C0392B}
   .tag-wage{background:var(--tag-purple-bg);color:var(--accent-purple)}
-  .tag-dismiss{background:#FEF9E7;color:#7D6608}
+  .tag-safe{background:var(--tag-green-bg);color:var(--accent-green)}
+  .tag-dismiss{background:#F0F4FF;color:#2C3E8C}
   .source{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted)}
   .card-title{font-size:14px;font-weight:700;line-height:1.45;margin-bottom:6px;color:var(--text-primary)}
   .card-body{font-size:12px;color:var(--text-secondary);line-height:1.7}
-  .card-body em{font-style:normal;color:var(--text-primary);font-weight:500}
+  .card-body em{font-style:normal;color:var(--text-primary);font-weight:600}
   .card-footer{display:flex;justify-content:flex-end;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
   .read-more{font-size:13px;font-weight:700;color:var(--firm-blue);font-family:'Noto Sans KR',sans-serif}
-  .read-more:hover{text-decoration:underline}
   .footer{margin-top:32px;text-align:center;font-size:11px;color:var(--text-muted);line-height:1.9}
   .footer-slogan{font-size:12px;color:var(--text-secondary);margin-bottom:4px}
   .footer-firm{font-size:13px;font-weight:700;color:var(--text-primary)}
-  .footer-tel{font-size:13px;font-weight:700;color:var(--text-primary)}
   .footer-copy{font-size:11px;color:var(--text-muted);margin-top:2px}
 </style>
 </head>
@@ -62,223 +54,223 @@
     <div class="header-label">Labor News Weekly Briefing</div>
     <div class="header-title">노동뉴스 위클리 브리핑</div>
     <div class="header-firm">청아노무법인</div>
-    <div class="header-date">2026년 4월 16일 (목)</div>
+    <div class="header-date">2026년 4월 17일 (금) ※ 수집기간 4.10~4.16</div>
     <div class="header-divider"></div>
   </div>
   <div class="summary-bar">
     <strong>Weekly Focus</strong>
-    민주노총 7월 총파업 경고 · 포스코이앤씨 원청 사용자성 첫 인정 · 경영성과급 임금성 대법원 기준 확정 · 주4.5일제 시범사업 본격화
+    노동절 휴일대체 불가 행정해석 · 포괄임금 오남용 방지 지침 시행 · 이중징계 대법원 기준 확정 · KOSHA 기술지원규정 351건 정비
   </div>
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="showTab('tab1',this)">집단적 노사관계</button>
-    <button class="tab-btn" onclick="showTab('tab2',this)">판례·행정해석</button>
-    <button class="tab-btn" onclick="showTab('tab3',this)">산재·안전</button>
+    <button class="tab-btn active" onclick="showTab('tab1',this)">판례·행정해석</button>
+    <button class="tab-btn" onclick="showTab('tab2',this)">노동정책·입법</button>
+    <button class="tab-btn" onclick="showTab('tab3',this)">집단적 노사관계</button>
     <button class="tab-btn" onclick="showTab('tab4',this)">임금·근로시간</button>
-    <button class="tab-btn" onclick="showTab('tab5',this)">노동정책·입법</button>
+    <button class="tab-btn" onclick="showTab('tab5',this)">산재·안전</button>
     <button class="tab-btn" onclick="showTab('tab6',this)">부당해고·징계</button>
   </div>
 
+  <!-- 판례·행정해석 -->
   <div id="tab1" class="tab-panel active">
+    <a class="card" href="https://www.worklaw.co.kr/main2022/view/view.asp?in_cate=123&in_cate2=0&bi_pidx=39068" target="_blank">
+      <div class="card-meta"><span class="tag tag-hot">🔥 핵심행정해석</span><span class="source">고용노동부 · 4.16</span></div>
+      <div class="card-title">노동절 휴일대체 불가 — 고용노동부 공식 행정해석</div>
+      <div class="card-body">「노동절 제정에 관한 법률」이 5월 1일을 특정해 유급휴일로 정하므로 <em>근로자 대표 서면합의로도 다른 날로 대체 불가.</em> 일반 공휴일(근기법 제55조②)과 달리 휴일대체 적용 불가. 출근 시 시급·일급제 최대 2.5배, 월급제 1.5배. 5인 미만도 유급휴일 보장(가산수당 면제).</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.edaily.co.kr/News/Read?newsId=03388246645414808&mediaCodeNo=257" target="_blank">
+      <div class="card-meta"><span class="tag tag-case">🔥 대법원판례</span><span class="source">이데일리 · 4.10</span></div>
+      <div class="card-title">이중징계 대법원 기준 확정 — 1차 징계 유효 시 동일 사유 재징계 불가</div>
+      <div class="card-body">대법원 제2부(주심 천대엽), 광명 새마을금고 사건 파기환송. <em>1차 정직 징계가 유효한 상태에서 동일 사유 면직은 이중징계로 무효.</em> 새마을금고중앙회장은 개정 새마을금고법상 개별 금고 임직원에 직접 제재처분 불가. 재징계 시 1차 징계 적법 취소 후 절차 진행 필요.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.worklaw.co.kr/main2022/view/view.asp?in_cate=122&in_cate2=0&bi_pidx=39051" target="_blank">
+      <div class="card-meta"><span class="tag tag-case">대법원판례</span><span class="source">노동법률 · 4.10</span></div>
+      <div class="card-title">단시간 근로자 상여금 미지급 — 대법원 "합리적 이유 없는 차별"</div>
+      <div class="card-body">대법원 제3부(주심 노경필), 환자이송 위탁업체 사건 상고기각 확정. <em>통상근로자와 본질적 업무 차이 없으면 상여금·연말성과급·명절상품권 미지급은 기간제법상 차별.</em> 단시간·기간제 근로자 처우 전면 점검 필요.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.lawtimes.co.kr/news/articleView.html?idxno=219193" target="_blank">
+      <div class="card-meta"><span class="tag tag-case">판례해설</span><span class="source">법률신문 · 4.10</span></div>
+      <div class="card-title">새마을금고 중앙회장 직접 제재권 없음 — 개정 새마을금고법 적용</div>
+      <div class="card-body">2017년 12월 개정된 새마을금고법은 중앙회장의 개별 금고 임직원 직접 제재 근거 삭제. <em>중앙회장은 조치 요구만 가능</em>. 개별 금고가 요구와 다른 처분을 해도 즉시 무효 아님. 농협·수협 등 유사 구조 기관은 각 법령에 따라 개별 판단.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.lawtimes.co.kr/news/articleView.html?idxno=218547" target="_blank">
+      <div class="card-meta"><span class="tag tag-interp">행정해석</span><span class="source">법률신문 · 4.10</span></div>
+      <div class="card-title">원하청 교섭절차 매뉴얼 — 전체 하청이 단일 교섭단위</div>
+      <div class="card-body">고용노동부, 노란봉투법 시행 후 <em>원청 교섭 요구 시 7일 내 공고 의무 확정.</em> 전체 하청노동자 집단을 단일 교섭단위로 해석. 사용자성 판단·공고 시정신청 사전 법적 검토 필수.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+  </div>
+
+  <!-- 노동정책·입법 -->
+  <div id="tab2" class="tab-panel">
+    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19208" target="_blank">
+      <div class="card-meta"><span class="tag tag-hot">🔥 이번 주 핵심</span><span class="source">고용노동부(moel.go.kr) · 4.9</span></div>
+      <div class="card-title">포괄임금 오남용 방지 지도 지침 4.9 시행 — 역사상 최초</div>
+      <div class="card-body">고용노동부, 52년 만에 <em>「공짜노동 근절을 위한 포괄임금 오남용 방지 지도 지침」 4월 9일 시행.</em> 임금대장·명세서 항목별 구분 기재 의무, 실근로시간 수당 지급 의무, 고정OT 차액 미지급 시 임금체불 처리. 익명신고센터 운영·기초노동질서 기획감독 착수.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19210" target="_blank">
+      <div class="card-meta"><span class="tag tag-policy">이번 주</span><span class="source">고용노동부(moel.go.kr) · 4.14</span></div>
+      <div class="card-title">고용노동부, 정부지원사업 정책연구 협력체계 구축 업무협약 체결</div>
+      <div class="card-body">고용노동부, <em>4.14 정책연구 협력체계 강화를 위한 업무협약 체결.</em> 노동정책 연구의 현장 실효성 제고와 근거 기반 정책 설계를 위한 부처 간 협력 강화 목적.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.todaykorea.co.kr/news/articleView.html?idxno=400806" target="_blank">
+      <div class="card-meta"><span class="tag tag-policy">입법</span><span class="source">투데이코리아 · 4.6</span></div>
+      <div class="card-title">노동절 법정공휴일 확정 — 국무회의 의결, 5.1 시행</div>
+      <div class="card-body">「공휴일에 관한 법률」 개정안 4.6 국무회의 의결. <em>5월 1일부터 공무원·교사·특수고용직까지 전 국민 법정공휴일 적용.</em> 기존 민간 근로자 유급휴일 권리는 그대로 유지.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.labortoday.co.kr" target="_blank">
+      <div class="card-meta"><span class="tag tag-policy">입법동향</span><span class="source">매일노동뉴스 · 4.9</span></div>
+      <div class="card-title">'일하는 사람 기본법' 5.1 전 처리 불투명</div>
+      <div class="card-body">정부 노동절 입법 공언에도 <em>4월 임시국회 처리 지체.</em> 노동자추정제(근로기준법 개정) 병행 추진 중이나 일정 불확실. 5월 국회 처리 여부가 관건.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19207" target="_blank">
+      <div class="card-meta"><span class="tag tag-policy">정책</span><span class="source">고용노동부(moel.go.kr) · 4.10</span></div>
+      <div class="card-title">이주노동자 지원 사각지대 해소 — 통합적 체류지원방안 논의</div>
+      <div class="card-body">고용노동부, 4.10 이주노동자 체류지원 사각지대 해소를 위한 <em>통합적 체류지원방안 논의.</em> 이주노동자 권리 보호와 지원 체계 강화 방향 협의.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+  </div>
+
+  <!-- 집단적 노사관계 -->
+  <div id="tab3" class="tab-panel">
     <a class="card" href="https://www.asiatoday.co.kr/kn/view.php?key=20260415010004796" target="_blank">
-      <div class="card-meta"><span class="tag tag-issue">핵심이슈</span><span class="source">아시아투데이 · 4.15</span></div>
+      <div class="card-meta"><span class="tag tag-hot">🔥 핵심이슈</span><span class="source">아시아투데이 · 4.15</span></div>
       <div class="card-title">민주노총, 교섭 불응 원청 대상 7월 총파업 경고</div>
       <div class="card-body">원청 <em>425곳에 교섭요구, 사실공고는 30곳</em>에 그쳐. 5.1 노동절 기점 투쟁 본격화, 교섭 회피 원청 대상 7월 총파업 예고.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
     <a class="card" href="https://www.ajunews.com/view/20260413132423570" target="_blank">
       <div class="card-meta"><span class="tag tag-issue">핵심이슈</span><span class="source">아주경제 · 4.13</span></div>
       <div class="card-title">포스코이앤씨 원청 사용자성 첫 인정 — 다중교섭 현실화</div>
       <div class="card-body">경북지방노동위, 전국건설노조 시정신청 인용. <em>원청 건설사 사용자성 첫 인정 사례.</em> 교섭단위 분리신청 117건, 다중교섭 구조 확산.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.sedaily.com/article/20032776" target="_blank">
-      <div class="card-meta"><span class="tag tag-issue">동향</span><span class="source">서울경제 · 4.15</span></div>
-      <div class="card-title">야당·재계, 노란봉투법 재개정 압박 본격화</div>
-      <div class="card-body">국민의힘·경영계 간담회 후 재개정 공식화. <em>"사용자성 확대 해석이 경영권까지 위협"</em>. 하청노조의 임금인상·직접고용 요구 확산 우려.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.dailian.co.kr/news/view/1633534" target="_blank">
-      <div class="card-meta"><span class="tag tag-issue">동향</span><span class="source">데일리안 · 4.15</span></div>
-      <div class="card-title">현대차그룹, 하청 교섭 요구 80% 집중 — 임단협 전 이중 압박</div>
-      <div class="card-body">금속노조 원청 교섭 요구 인원 <em>2만명 중 80%</em>가 현대차그룹 계열·협력사. 임단협 상견례 전부터 이중 교섭 압박 현실화.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
     <a class="card" href="https://www.etoday.co.kr/news/view/2574652" target="_blank">
       <div class="card-meta"><span class="tag tag-issue">통계</span><span class="source">이투데이 · 4.10</span></div>
       <div class="card-title">노란봉투법 한 달 — 원청 교섭 요구 1,011건 돌파</div>
       <div class="card-body">372개 원청 사업장 대상 하청 노조 <em>1,011곳(조합원 14만 6천명)</em> 교섭 요구. 초기 증가율 35.3% → 후반 2.5%로 둔화.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
-    <a class="card" href="https://www.lawtimes.co.kr/news/articleView.html?idxno=218547" target="_blank">
-      <div class="card-meta"><span class="tag tag-issue">매뉴얼</span><span class="source">법률신문 · 4월</span></div>
-      <div class="card-title">고용부 교섭절차 매뉴얼 — 전체 하청노동자가 단일 교섭단위</div>
-      <div class="card-body">원청 교섭 요구 시 <em>7일 내 공고 의무.</em> 전체 하청을 원청 노동자와 구분된 단일 교섭단위로 확정.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+    <a class="card" href="https://www.dailian.co.kr/news/view/1633534" target="_blank">
+      <div class="card-meta"><span class="tag tag-issue">동향</span><span class="source">데일리안 · 4.15</span></div>
+      <div class="card-title">현대차그룹 하청 교섭 요구 80% 집중 — 임단협 전 이중 압박</div>
+      <div class="card-body">금속노조 원청 교섭 요구 인원 <em>2만명 중 80%</em>가 현대차그룹 계열·협력사. 임단협 상견례 전부터 이중 교섭 압박 현실화.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
-  </div>
-
-  <div id="tab2" class="tab-panel">
-    <a class="card" href="https://www.lawtimes.co.kr/news/articleView.html?idxno=218008" target="_blank">
-      <div class="card-meta"><span class="tag tag-case">대법원판례</span><span class="source">법률신문 · 3월</span></div>
-      <div class="card-title">경영성과급 임금성 — 대법원 1·2차 판결 기준 확정</div>
-      <div class="card-body"><em>사전 확정 구조(PI) → 임금 인정</em>, 실적 연동 구조(PS) → 임금 부정. 삼성전자·SK하이닉스·LG디스플레이 등 5건. 퇴직금·평균임금 재검토 필요.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.worklaw.co.kr/main2022/view/view.asp?in_cate=122&gopage=1&bi_pidx=37889" target="_blank">
-      <div class="card-meta"><span class="tag tag-case">판례</span><span class="source">노동법률 · 4월호</span></div>
-      <div class="card-title">중대재해처벌법 무죄·불기소 핵심 기준 — 안전관리체계 이행 여부</div>
-      <div class="card-body">대전 석탄공사 항소심도 무죄. 경영책임자 의무 위반과 사고 간 <em>인과관계 불명확.</em> 안전보건관리체계 구축·반기 평가 이행이 핵심.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.kimchang.com/ko/insights/detail.kc?sch_section=4&idx=34051" target="_blank">
-      <div class="card-meta"><span class="tag tag-case">판례분석</span><span class="source">김·장 법률사무소</span></div>
-      <div class="card-title">삼성전자 PI 임금성 인정 — 퇴직금 차액 청구 분쟁 예고</div>
-      <div class="card-body">대법원, 목표 인센티브(PI) 임금 인정으로 <em>퇴직금 증액 산정 의무</em> 발생. 전국삼성전자노조 단체소송 준비 착수.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.seoul.co.kr/news/society/law/2026/02/13/20260213008006" target="_blank">
-      <div class="card-meta"><span class="tag tag-case">판례</span><span class="source">서울신문 · 2.13</span></div>
-      <div class="card-title">SK하이닉스 경영성과급 임금성 부정 — 퇴직금 미포함 확정</div>
-      <div class="card-body">대법원, 영업이익 연동 성과급은 <em>근로의 대가 아닌 경영성과 분배</em>로 판단. 취업규칙 지급기준 미명시도 근거.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://biz.heraldcorp.com/article/10717566" target="_blank">
-      <div class="card-meta"><span class="tag tag-case">전문가의견</span><span class="source">헤럴드경제 · 4.15</span></div>
-      <div class="card-title">노란봉투법 사용자성 확대 해석 — 경영권 위협 논란</div>
-      <div class="card-body">전문가들도 <em>교섭 의무 부담 사용자, 교섭 의제 범위</em> 파악 어렵다고 지적. 하청노조의 원청 경영권 개입 사례 증가.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+    <a class="card" href="https://www.sedaily.com/article/20032776" target="_blank">
+      <div class="card-meta"><span class="tag tag-issue">동향</span><span class="source">서울경제 · 4.15</span></div>
+      <div class="card-title">야당·재계, 노란봉투법 재개정 압박 본격화</div>
+      <div class="card-body">국민의힘·경영계 간담회 후 재개정 공식화. <em>"사용자성 확대 해석이 경영권까지 위협".</em> 하청노조의 직접고용 요구 확산 우려.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
   </div>
 
-  <div id="tab3" class="tab-panel">
-    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18725" target="_blank">
-      <div class="card-meta"><span class="tag tag-safe">정책</span><span class="source">고용노동부</span></div>
-      <div class="card-title">산재보상·일터복귀 종합지원단 출범 — 처리기간 160일 목표</div>
-      <div class="card-body">평균 228일 산재 처리기간을 <em>2026년 160일 수준</em>으로 단축 추진. 화물차주·방과후 강사 등 산안법 적용 확대.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.safety1stnews.com/news/articleView.html?idxno=7591" target="_blank">
-      <div class="card-meta"><span class="tag tag-safe">법령</span><span class="source">세이프티퍼스트 · 1.4</span></div>
-      <div class="card-title">2026년 산업안전 강화 — 위험기계·방화포 인증 의무화</div>
-      <div class="card-body">혼합기·파쇄기 등 위험기계류 안전검사, 용접·용단 시 <em>인증 방화포 사용 의무화.</em> 고위험 사업장 2만 6천개소 불시점검.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.moel.go.kr/" target="_blank">
-      <div class="card-meta"><span class="tag tag-safe">보도자료</span><span class="source">고용노동부 · 3.13</span></div>
-      <div class="card-title">신재생에너지 기업 특별감독 착수 — AI 활용 노동법 위반 점검</div>
-      <div class="card-body">회사 대표 위협·폭언 사례 계기로 <em>특별근로감독 착수.</em> AI가 근로계약서·현장사진 분석해 위반사항 자동 점검.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.smedaily.co.kr/news/articleView.html?idxno=350180" target="_blank">
-      <div class="card-meta"><span class="tag tag-safe">통계·분석</span><span class="source">중소기업신문</span></div>
-      <div class="card-title">중대재해처벌법 판례 분석 — 유죄 91.5%, 대부분 집행유예</div>
-      <div class="card-body">1심 이상 판결 71건 중 유죄 65건(91.5%). 실형 7건, 집행유예 55건. <em>양형 느슨해 입법 취지 무색</em>하다는 비판 지속.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.korea.kr/news/policyNewsView.do?newsId=156734720" target="_blank">
-      <div class="card-meta"><span class="tag tag-safe">정책</span><span class="source">정책브리핑</span></div>
-      <div class="card-title">포괄임금·특별연장근로 기획감독 분기별 실시</div>
-      <div class="card-body">교대제·특별연장근로 반복, 포괄임금 오남용 사업장 대상 <em>분기별 기획감독</em> 실시. 야간노동자 건강권 보호 관리방안 마련 예정.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-  </div>
-
+  <!-- 임금·근로시간 -->
   <div id="tab4" class="tab-panel">
-    <a class="card" href="https://www.eroun.net/news/articleView.html?idxno=69234" target="_blank">
-      <div class="card-meta"><span class="tag tag-wage">정책</span><span class="source">이로운넷</span></div>
-      <div class="card-title">주4.5일제 시범사업 324억 편성 — 실노동시간 단축 본격화</div>
-      <div class="card-body">연간 노동시간 OECD 평균 <em>1,700시간대</em> 목표. 육아기 10시 출근제·업무분담지원금 병행. 「실노동시간 단축 지원 제정법」 입법 추진.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19208" target="_blank">
+      <div class="card-meta"><span class="tag tag-hot">🔥 실무필수</span><span class="source">고용노동부(moel.go.kr) · 4.9</span></div>
+      <div class="card-title">포괄임금 오남용 방지 지침 — 고정OT 차액 미지급 시 임금체불</div>
+      <div class="card-body"><em>고정OT 약정 시에도 실제 근로시간 수당이 약정 수당 초과 시 차액 미지급은 임금체불로 엄중 처리.</em> 임금대장·명세서 항목별 구분 기재 의무. 익명신고센터(labor.moel.go.kr) 운영.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
-    <a class="card" href="https://www.worklaw.co.kr/" target="_blank">
-      <div class="card-meta"><span class="tag tag-wage">법리분석</span><span class="source">노동법률 · 4월호</span></div>
-      <div class="card-title">해고기간 임금·중간수입 공제 법리 — 실무 쟁점 정리</div>
-      <div class="card-body">해고기간 임금 산정 시 <em>중간수입 공제 범위와 한계</em> 심층 분석. 부당해고 구제 시 금전보상명령과의 관계 정리.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.kimchang.com/ko/insights/detail.kc?sch_section=4&idx=33725" target="_blank">
-      <div class="card-meta"><span class="tag tag-wage">법령개정</span><span class="source">김·장 법률사무소</span></div>
-      <div class="card-title">육아기 근로시간 단축급여 상한 인상 — 업무분담지원금 신설</div>
-      <div class="card-body">단축급여 산정 기준금액 상한 인상으로 <em>소득 감소 폭 완화.</em> 배우자 출산휴가 업무분담 지원금 신설. 취업규칙 정비 필요.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+    <a class="card" href="https://www.reportera.co.kr/news/may-day-no-substitute-holiday-2-5x-wage/comment-page-1/" target="_blank">
+      <div class="card-meta"><span class="tag tag-wage">실무</span><span class="source">리포테라 · 4.16</span></div>
+      <div class="card-title">노동절 출근 시 임금 최대 2.5배 — 미지급 시 징역 3년</div>
+      <div class="card-body">시급·일급제: <em>실근로 100% + 가산수당 50% + 유급휴일 100% = 2.5배.</em> 월급제: 1.5배 추가. 5인 미만 가산수당 면제. 법정 임금 미지급 시 3년 이하 징역·3천만원 벌금.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
     <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18725" target="_blank">
       <div class="card-meta"><span class="tag tag-wage">통계</span><span class="source">고용노동부</span></div>
       <div class="card-title">임금체불액 1조 6,413억 — 전년 대비 7.8% 증가</div>
       <div class="card-body">피해 노동자 수는 감소 추세이나 <em>체불 총액은 7.8% 증가.</em> 상습체불 사업주 경제적 제재 강화, 임금구분 지급제 도입 추진.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
-    <a class="card" href="https://www.safety1stnews.com/news/articleView.html?idxno=7591" target="_blank">
-      <div class="card-meta"><span class="tag tag-wage">법령</span><span class="source">세이프티퍼스트</span></div>
-      <div class="card-title">2026년 구직급여 상한 6만 8,100원으로 인상</div>
-      <div class="card-body">구직급여 일일 상한액 <em>6만 6,000원 → 6만 8,100원</em> 인상. 임금일액 상한도 11만 원 → 11만 3,500원으로 조정.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-  </div>
-
-  <div id="tab5" class="tab-panel">
-    <a class="card" href="https://www.labortoday.co.kr" target="_blank">
-      <div class="card-meta"><span class="tag tag-policy">입법동향</span><span class="source">매일노동뉴스 · 4.9</span></div>
-      <div class="card-title">'일하는 사람 기본법' 5.1 전 처리 불투명</div>
-      <div class="card-body">정부 노동절 입법 마무리 공언에도 <em>4월 임시국회 처리 지체.</em> 노동자추정제(근로기준법 개정) 병행 추진 중이나 일정 불확실.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18725" target="_blank">
-      <div class="card-meta"><span class="tag tag-policy">정책</span><span class="source">고용노동부</span></div>
-      <div class="card-title">공공부문 비정규직 처우개선 대책 4월 발표 예정</div>
-      <div class="card-body">전 부처 실태조사 완료 후 <em>관계부처 협의·예산 반영 추진.</em> 비정규직 고용불안 개선을 위한 보상방안 검토 중.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.korea.kr/news/policyNewsView.do?newsId=156734720" target="_blank">
-      <div class="card-meta"><span class="tag tag-policy">정책</span><span class="source">정책브리핑</span></div>
-      <div class="card-title">가짜 3.3 계약 기획감독 확대 — 국세청 과세정보 활용</div>
-      <div class="card-body">노동법 적용 회피 수단으로 악용되는 <em>가짜 3.3 계약 근절</em>을 위해 국세청 과세정보 활용 기획감독 지속 확대.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.moel.go.kr/" target="_blank">
-      <div class="card-meta"><span class="tag tag-policy">입법</span><span class="source">고용노동부 · 3.12</span></div>
-      <div class="card-title">고용노동부 소관 3개 법률안 국회 의결</div>
-      <div class="card-body">노동 존중·안전 최우선 기조로 <em>중앙-지방 노동감독관 협력체계</em> 강화. 3개 법률안 국회 통과로 현장 집행력 확보.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-    <a class="card" href="https://www.lexology.com/library/detail.aspx?g=08bc5e91-1bd7-4b08-9eca-0ac480b0794b" target="_blank">
-      <div class="card-meta"><span class="tag tag-policy">분석</span><span class="source">Lexology · 1.30</span></div>
-      <div class="card-title">2026년 노동정책 변곡점 — 노동권 확장·실근로시간 단축</div>
-      <div class="card-body">노조법 2·3조, 노동안전 보건체계, 임금격차 해소 등 <em>구조적 패러다임 재구성.</em> 정책 집행력·사회적 합의가 성패 좌우.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
-    </a>
-  </div>
-
-  <div id="tab6" class="tab-panel">
-    <a class="card" href="https://www.worklaw.co.kr/" target="_blank">
-      <div class="card-meta"><span class="tag tag-dismiss">법리분석</span><span class="source">노동법률 · 4월호</span></div>
-      <div class="card-title">해고기간 임금·중간수입 공제 — 실무 법리 총정리</div>
-      <div class="card-body">부당해고 구제 후 <em>해고기간 임금과 중간수입 공제 범위</em> 심층 분석. 금전보상명령 선택 시 산정 기준 명확화 필요.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+    <a class="card" href="https://www.eroun.net/news/articleView.html?idxno=69234" target="_blank">
+      <div class="card-meta"><span class="tag tag-wage">정책</span><span class="source">이로운넷</span></div>
+      <div class="card-title">주4.5일제 시범사업 324억 편성 — 실노동시간 단축 본격화</div>
+      <div class="card-body">연간 노동시간 OECD 평균 <em>1,700시간대</em> 목표. 육아기 10시 출근제·업무분담지원금 병행. 「실노동시간 단축 지원 제정법」 입법 추진.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
     <a class="card" href="https://www.kimchang.com/ko/insights/detail.kc?sch_section=4&idx=33725" target="_blank">
-      <div class="card-meta"><span class="tag tag-dismiss">법령개정</span><span class="source">김·장 법률사무소</span></div>
-      <div class="card-title">2026년 인사·노무 법령 개정 — 육아기 단축·업무분담 지원</div>
-      <div class="card-body">육아기 근로시간 단축 관련 <em>업무분담지원금 신설.</em> 동료 직원 수당 일부 지원 제도 도입. 취업규칙 정비 권고.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+      <div class="card-meta"><span class="tag tag-wage">법령개정</span><span class="source">김·장 법률사무소</span></div>
+      <div class="card-title">육아기 단축급여 상한 인상 — 업무분담지원금 신설</div>
+      <div class="card-body">단축급여 기준금액 상한 인상으로 <em>소득 감소 폭 완화.</em> 배우자 출산휴가 업무분담 지원금 신설. 취업규칙 정비 필요.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
-    <a class="card" href="https://www.labortoday.co.kr" target="_blank">
-      <div class="card-meta"><span class="tag tag-dismiss">동향</span><span class="source">매일노동뉴스</span></div>
-      <div class="card-title">수습기간 해고 분쟁 증가 — 3개월 이상 근무 시 구제 가능</div>
-      <div class="card-body">수습 중 해고는 정규직보다 폭넓게 인정되나, <em>3개월 이상 근무 또는 가혹한 사유</em> 시 부당해고 인정 사례 증가.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+  </div>
+
+  <!-- 산재·안전 -->
+  <div id="tab5" class="tab-panel">
+    <a class="card" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156753509&call_from=rsslink" target="_blank">
+      <div class="card-meta"><span class="tag tag-hot">🔥 이번 주</span><span class="source">안전보건공단(kosha.or.kr) · 4.8</span></div>
+      <div class="card-title">KOSHA GUIDE 351건 대대적 정비 — 신산업·고령·리튬배터리 기준 신설</div>
+      <div class="card-body">안전보건공단, 4.8 기술지원규정(KOSHA GUIDE) <em>351건 정비 추진.</em> 추락안전매트·고령노동자 안전보건·리튬배터리(ESS)·수소가스 등 신규 기준 마련. 최신 법령·기술 반영으로 현장 활용도 제고.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
-    <a class="card" href="https://www.moel.go.kr/" target="_blank">
-      <div class="card-meta"><span class="tag tag-dismiss">정책</span><span class="source">고용노동부</span></div>
-      <div class="card-title">직장 내 괴롭힘 신고 증가 — AI 활용 근로감독 체계 도입</div>
-      <div class="card-body">AI가 근로계약서·작업현장 사진 기반으로 <em>노동법 위반사항 자동 점검.</em> 구인공고 법 위반 여부도 직접 점검 예정.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+    <a class="card" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156753509" target="_blank">
+      <div class="card-meta"><span class="tag tag-safe">이번 주</span><span class="source">안전보건공단(kosha.or.kr) · 4.10</span></div>
+      <div class="card-title">글로벌 예비산업인력 온라인 콘텐츠로 산재예방 선도</div>
+      <div class="card-body">안전보건공단 안전문화홍보실, 4.10 보도자료. <em>외국인 예비 산업인력 대상 온라인 산재예방 콘텐츠 제공 확대.</em> 이주노동자 산업안전 사각지대 해소 목적.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=18725" target="_blank">
+      <div class="card-meta"><span class="tag tag-safe">정책</span><span class="source">고용노동부</span></div>
+      <div class="card-title">산재보상·일터복귀 종합지원단 출범 — 처리기간 160일 목표</div>
+      <div class="card-body">평균 228일 산재 처리기간을 <em>2026년 160일 수준</em>으로 단축 추진. 화물차주·방과후 강사 등 산안법 적용 확대.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.smedaily.co.kr/news/articleView.html?idxno=350180" target="_blank">
+      <div class="card-meta"><span class="tag tag-safe">통계</span><span class="source">중소기업신문</span></div>
+      <div class="card-title">중대재해처벌법 판례 — 유죄 91.5%, 실형은 7건뿐</div>
+      <div class="card-body">1심 이상 71건 중 유죄 65건(91.5%). 실형 7건, 집행유예 55건. <em>양형 느슨해 입법 취지 무색</em>하다는 비판. 안전관리체계 이행 여부가 무죄·유죄 분수령.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.safety1stnews.com/news/articleView.html?idxno=7591" target="_blank">
+      <div class="card-meta"><span class="tag tag-safe">법령</span><span class="source">세이프티퍼스트</span></div>
+      <div class="card-title">2026년 위험기계·방화포 인증 의무화 시행</div>
+      <div class="card-body">혼합기·파쇄기 등 위험기계류 안전검사, 용접·용단 시 <em>인증 방화포 사용 의무화.</em> 고위험 사업장 2만 6천개소 불시점검. 위반 시 무관용 원칙 적용.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+  </div>
+
+  <!-- 부당해고·징계 -->
+  <div id="tab6" class="tab-panel">
+    <a class="card" href="https://www.edaily.co.kr/News/Read?newsId=03388246645414808&mediaCodeNo=257" target="_blank">
+      <div class="card-meta"><span class="tag tag-hot">🔥 이번 주 판례</span><span class="source">이데일리 · 4.10 (중앙노동위 선례 연계)</span></div>
+      <div class="card-title">이중징계 불가 — 대법원, 1차 징계 유효 시 동일 사유 재징계 무효</div>
+      <div class="card-body">대법원 2부, 새마을금고 면직 파기환송. <em>1차 정직이 적법하게 효력을 상실하지 않은 상태에서 동일 사유 면직은 이중징계 무효.</em> 재징계 필요 시 반드시 1차 징계 적법 취소 후 재진행. 중노위 구제신청 실무에도 직접 영향.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.worklaw.co.kr/main2022/view/view.asp?in_cate=122&in_cate2=0&bi_pidx=39051" target="_blank">
+      <div class="card-meta"><span class="tag tag-dismiss">이번 주 판례</span><span class="source">노동법률 · 4.10</span></div>
+      <div class="card-title">단시간 근로자 상여금 차별 해고 시 불이익 — 취업규칙 점검 긴요</div>
+      <div class="card-body">상여금·성과급 차별 확정으로 <em>단시간 근로자 차별적 처우 관련 구제신청 증가 예상.</em> 취업규칙상 단시간 근로자 임금·복지 조항 즉시 점검 권고.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://clobe.ai/blog/probation-period-termination-guide" target="_blank">
+      <div class="card-meta"><span class="tag tag-dismiss">실무가이드</span><span class="source">클로브 노동법 블로그 · 2월</span></div>
+      <div class="card-title">수습기간 해고 실무 — 서면 통지·평가 기록 없으면 부당해고</div>
+      <div class="card-body">2026년 노동위원회 판례 강화. <em>구체적 평가 기록과 서면 통지 절차 없는 수습 해고는 무효 가능성 높음.</em> 3개월 이상 근무 시 해고예고 의무 발생. 수습 연장 시 총 근무기간 기준 적용.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+    <a class="card" href="https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19208" target="_blank">
+      <div class="card-meta"><span class="tag tag-dismiss">정책</span><span class="source">고용노동부(moel.go.kr) · 4.9</span></div>
+      <div class="card-title">직장 내 괴롭힘 — AI 활용 근로감독·구인공고 위반 직접 점검</div>
+      <div class="card-body">고용노동부, 포괄임금 지도지침과 함께 <em>AI 기반 근로계약서·구인공고 법 위반 자동 점검 체계 강화.</em> 이주노동자 사업장 욕설·폭언 기획감독도 착수.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
     <a class="card" href="https://www.lawtimes.co.kr/news/articleView.html?idxno=218008" target="_blank">
       <div class="card-meta"><span class="tag tag-dismiss">판례</span><span class="source">법률신문</span></div>
-      <div class="card-title">재직자 조건부 성과급 — 해고 후 지급 거부 적법성 판단</div>
+      <div class="card-title">재직자 조건부 성과급 — 해고 후 지급 거부 적법 확정</div>
       <div class="card-body">대법원, 재직자 조건이 명시된 성과급의 <em>해고 기간 중 지급 거부는 적법</em>하다고 판단. 취업규칙 재직 조건 설계 중요.</div>
-      <div class="card-footer"><span class="read-more">📎 원문 보기 →</span></div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
     </a>
   </div>
 
@@ -286,19 +278,14 @@
     <div class="footer-slogan">복잡한 노동문제 청아노무법인과 함께 하세요</div>
     <div class="footer-firm">청아노무법인</div>
     <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:4px 0">
-      <div class="footer-tel"><a href="tel:0518534421" style="color:var(--text-primary);text-decoration:none;font-weight:700;">051-853-4421</a></div>
-      <a href="tel:0518534421" style="display:inline-flex;align-items:center;gap:4px;background:var(--firm-blue);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;">전화 연결</a>
+      <div style="font-size:13px;font-weight:700;"><a href="tel:0518534421" style="color:#1A1A1A;text-decoration:none;font-weight:700;">051-853-4421</a></div>
+      <a href="tel:0518534421" style="display:inline-flex;align-items:center;gap:4px;background:#1A4FA0;color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;">전화 연결</a>
     </div>
     <div class="footer-copy">매주 업데이트 · 2026 ©</div>
   </div>
 </div>
 <script>
-function showTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
+function showTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
 </script>
 </body>
 </html>
