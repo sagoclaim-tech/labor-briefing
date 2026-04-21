@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3C14K6DE4T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3C14K6DE4T');
+</script>
+<title>청아노무법인 데일리 브리핑 | 2026.04.22</title>
+<meta property="og:title" content="[청아노무법인] 노동뉴스 데일리 브리핑 | 2026.04.22(수)">
+<meta property="og:description" content="• 노동부 장관, 소규모 건설현장 '일일 안전지킴이' • 삼성 4.23 결기대회 D-1, 가처분 심문 임박 • 19회 재범 체불 사업주 구속기소">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="청아노무법인">
+<meta name="description" content="• 노동부 장관, 소규모 건설현장 '일일 안전지킴이' • 삼성 4.23 결기대회 D-1, 가처분 심문 임박 • 19회 재범 체불 사업주 구속기소">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap');
+  :root{
+    --bg:#F5F4F0;--surface:#FFFFFF;--text-primary:#1A1A1A;--text-secondary:#5A5A5A;--text-muted:#9A9A9A;
+    --border:#E5E3DC;--divider:#EDEBE4;
+    --firm-blue:#1A4FA0;--firm-blue-dark:#153D80;--hot-red:#C0392B;
+    --tag-case:#B8860B;--tag-case-bg:#FDF8EE;
+    --tag-interp:#7D6608;--tag-interp-bg:#FEF9E7;
+    --tag-policy:#1A5276;--tag-policy-bg:#EEF3FD;
+    --tag-union:#6C3483;--tag-union-bg:#F5EEF8;
+    --tag-wage:#A04000;--tag-wage-bg:#FDF2EC;
+    --tag-safe:#1E6B41;--tag-safe-bg:#EEF8F3;
+    --tag-dismiss:#2C3E8C;--tag-dismiss-bg:#F0F4FF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);font-family:'Noto Sans KR',sans-serif;color:var(--text-primary);min-height:100vh;padding:32px 16px 60px}
+  .wrapper{max-width:520px;margin:0 auto}
+  .header{margin-bottom:24px}
+  .header-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px}
+  .header-title{font-size:22px;font-weight:700;color:var(--text-primary);letter-spacing:-.5px;line-height:1.2}
+  .header-firm{font-size:13px;font-weight:700;margin-top:5px;color:var(--firm-blue)}
+  .header-date{font-size:12px;color:var(--text-secondary);margin-top:3px}
+  .header-divider{height:2px;background:var(--text-primary);margin-top:14px;width:32px}
+
+  .summary-bar{background:var(--text-primary);color:#fff;border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:12.5px;line-height:1.7}
+  .summary-bar strong{font-weight:700;font-size:10px;letter-spacing:1.5px;opacity:.6;display:block;margin-bottom:5px;text-transform:uppercase;font-family:'DM Mono',monospace}
+
+  .section{margin-bottom:28px}
+  .section-title{font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:12px;padding-bottom:8px;border-bottom:1.5px solid var(--text-primary);display:flex;align-items:center;justify-content:space-between}
+  .section-title .count{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted);font-weight:400}
+  .top3-section .section-title{border-bottom-color:#C0392B}
+
+  .card{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:16px 18px;margin-bottom:10px;text-decoration:none;display:block;color:inherit;transition:transform .15s ease,box-shadow .15s ease;position:relative}
+  .card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+  .top-card{border-left:4px solid #C0392B;padding-left:44px}
+  .main-card{padding-left:44px}
+  .rank-badge{position:absolute;left:14px;top:16px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:#fff}
+  .rank-red{background:#C0392B}
+  .rank-blue{background:var(--firm-blue)}
+
+  .card-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+  .tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
+  .tag-hot{background:#FDF0EE;color:var(--hot-red)}
+  .tag-case{background:var(--tag-case-bg);color:var(--tag-case)}
+  .tag-interp{background:var(--tag-interp-bg);color:var(--tag-interp)}
+  .tag-policy{background:var(--tag-policy-bg);color:var(--tag-policy)}
+  .tag-union{background:var(--tag-union-bg);color:var(--tag-union)}
+  .tag-wage{background:var(--tag-wage-bg);color:var(--tag-wage)}
+  .tag-safe{background:var(--tag-safe-bg);color:var(--tag-safe)}
+  .tag-dismiss{background:var(--tag-dismiss-bg);color:var(--tag-dismiss)}
+  .source{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted)}
+
+  .card-title{font-size:14px;font-weight:700;line-height:1.45;margin-bottom:6px;color:var(--text-primary)}
+  .card-body{font-size:12px;color:var(--text-secondary);line-height:1.7}
+  .card-body em{font-style:normal;color:var(--text-primary);font-weight:600}
+  .card-footer{display:flex;justify-content:flex-end;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+  .read-more{font-size:13px;font-weight:700;color:var(--firm-blue);font-family:'Noto Sans KR',sans-serif}
+
+  .brief-section{margin-top:24px;padding-top:20px;border-top:1.5px dashed #CFCBC0}
+  .brief-title{font-size:12px;font-weight:700;color:var(--text-secondary);margin-bottom:10px;letter-spacing:-.2px}
+  .brief-card{background:var(--surface);border-radius:10px;border:1px solid var(--border);padding:11px 14px;margin-bottom:7px;text-decoration:none;display:block;color:inherit;transition:background .15s}
+  .brief-card:hover{background:#FAFAF6}
+  .brief-meta{display:flex;gap:6px;margin-bottom:4px;align-items:center;flex-wrap:wrap}
+  .brief-tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px}
+  .brief-source{font-family:'DM Mono',monospace;font-size:9px;color:var(--text-muted)}
+  .brief-headline{font-size:12.5px;font-weight:600;color:var(--text-primary);line-height:1.4;letter-spacing:-.2px}
+
+  .footer{margin-top:40px;padding:28px 18px 28px;background:var(--surface);border-radius:14px;border:1px solid var(--border);text-align:center}
+  .footer-mark{width:28px;height:2px;background:var(--firm-blue);margin:0 auto 16px}
+  .footer-slogan{font-size:13.5px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px;letter-spacing:-.2px}
+  .footer-slogan b{font-weight:700;color:var(--firm-blue);font-size:14.5px}
+  .footer-intro{font-size:11.5px;color:var(--text-secondary);line-height:1.65;margin-bottom:22px;letter-spacing:-.15px;padding:0 6px}
+  .footer-intro b{font-weight:700;color:var(--text-primary)}
+
+  .services-block{background:var(--bg);border-radius:10px;padding:14px 12px;margin-bottom:14px;text-align:left}
+  .service-item{display:grid;grid-template-columns:74px 1fr;align-items:center;gap:8px;padding:8px 2px;line-height:1.45}
+  .service-item:not(:last-child){border-bottom:1px dashed #DAD7CD}
+  .service-name{font-weight:700;font-size:11px;color:var(--firm-blue);letter-spacing:-.4px;white-space:nowrap}
+  .service-detail{color:var(--text-secondary);font-size:10.5px;line-height:1.5;font-weight:400;letter-spacing:-.3px;word-break:keep-all}
+
+  .contact-block{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+  .contact-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:12px 14px;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+  .contact-info{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0}
+  .contact-line1{display:flex;align-items:baseline;gap:6px;flex-wrap:nowrap}
+  .contact-city{font-size:12.5px;font-weight:700;color:var(--firm-blue);letter-spacing:-.2px}
+  .contact-person{font-size:11px;color:var(--text-secondary);letter-spacing:-.3px;line-height:1.3}
+  .contact-person b{font-weight:700;color:var(--text-primary)}
+  .contact-num{font-size:13.5px;font-weight:700;color:var(--text-primary);text-decoration:none;font-family:'DM Mono',monospace;letter-spacing:.2px;display:block;margin-top:1px}
+  .contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:var(--firm-blue);color:#fff !important;font-size:10.5px;font-weight:700;padding:9px 13px;border-radius:20px;text-decoration:none;letter-spacing:-.2px;transition:background .15s;white-space:nowrap;flex-shrink:0}
+  .contact-btn:hover{background:var(--firm-blue-dark)}
+  .contact-btn svg{width:11px;height:11px;flex-shrink:0}
+
+  .footer-signature{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+  .footer-firm-name{font-size:18px;font-weight:900;color:var(--firm-blue);letter-spacing:-.5px;margin-bottom:6px;line-height:1.2}
+  .footer-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted);letter-spacing:.3px}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div class="header-label">Labor News Daily Briefing</div>
+    <div class="header-title">노동뉴스 데일리 브리핑</div>
+    <div class="header-firm">청아노무법인</div>
+    <div class="header-date">2026년 4월 22일 (수)</div>
+    <div class="header-divider"></div>
+  </div>
+
+  <div class="summary-bar">
+    <strong>Today's Focus</strong>
+    노동부 장관, 소규모 건설현장 '일일 안전지킴이' 동행점검 · 삼성 4.23 결기대회 D-1, 법원 가처분 심문 예정 · 사회초년생 19회 재범 상습체불 사업주 구속기소
+  </div>
+
+  <div class="section top3-section">
+    <div class="section-title">Today's Top 3 <span class="count">핵심 속보</span></div>
+
+    <a class="card top-card" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156814029" target="_blank" rel="noopener">
+      <span class="rank-badge rank-red">1</span>
+      <div class="card-meta"><span class="tag tag-hot">🔥 산재·안전</span><span class="source">고용노동부 · 4.16</span></div>
+      <div class="card-title">노동부 장관, '일일 안전지킴이'로 소규모 건설현장 추락위험 직접 점검</div>
+      <div class="card-body">김영훈 장관이 4.16 서울 종로구 소규모 건설현장을 방문하여 <em>'안전한 일터 지킴이'(퇴직자·노사 전문가 1,000명 규모)</em>와 2인 1조 순찰 동행. 연간 28만 회 순찰 목표, 이동식 비계·접이식 사다리 추락 위험요인 즉시 개선조치. <em>공사금액 50억 미만·10인 미만 사업장 추락방호망 등 최대 3,000만 원 지원</em>. 중소 사업장 감독 사각지대 해소 본격화.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card top-card" href="https://www.thelec.kr/news/articleView.html?idxno=55216" target="_blank" rel="noopener">
+      <span class="rank-badge rank-red">2</span>
+      <div class="card-meta"><span class="tag tag-hot">🔥 집단적 노사관계</span><span class="source">디일렉 · 4.17</span></div>
+      <div class="card-title">삼성전자 노조 4.23 결기대회 D-1, 수원지법 가처분 심문 임박</div>
+      <div class="card-body">삼성전자가 수원지법에 <em>'위법 쟁의행위 금지 가처분'</em>을 신청하며 노조법 4개 조항(안전보호시설 운영방해·장비손상·사업장 점거·쟁의참여 강요 협박)을 근거로 제시. 노조는 "설비·제조 인력의 <em>협정근로자 편입 거부</em>" 선언. 협정근로자 거부 시 <em>노조법 제38조 제2항(안전보호시설 정상 운영 의무) 위반 소지</em> 쟁점 부각.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card top-card" href="https://www.newsis.com/view/NISX20260415_0003592693" target="_blank" rel="noopener">
+      <span class="rank-badge rank-red">3</span>
+      <div class="card-meta"><span class="tag tag-hot">🔥 임금체불</span><span class="source">뉴시스 · 4.15</span></div>
+      <div class="card-title">사회초년생 임금 체불 19회 재범 사업주, 의정부지검이 구속기소</div>
+      <div class="card-body">의정부지검 형사4부가 <em>20대 사회초년생 근로자 임금 1,000만 원 체불 혐의</em>로 A씨를 근로기준법위반죄 구속기소. 동종 범죄 19회 재범자로 근로감독관 소환 불응·주거지 반복 이동으로 수사 장기화시킨 이력. 검찰이 체포영장·통신기지국 추적으로 직접 검거, 구속전 피의자심문 직접 참여. <em>상습체불사업주 근절법</em>(근로기준법 제43조의2~3) 시행 후 적극 수사 사례.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-title">주요 뉴스 <span class="count">중요도순 8건</span></div>
+
+    <a class="card main-card" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156814825" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">4</span>
+      <div class="card-meta"><span class="tag tag-policy">정책/입법</span><span class="source">고용노동부 · 4.20</span></div>
+      <div class="card-title">고용노동부, 붕괴사고 예방 강화 '전국 릴레이 세미나' 본격 착수</div>
+      <div class="card-body">고용노동부 <em>건설산재예방감독과</em>가 4.20 붕괴사고 예방 강화를 위한 전국 릴레이 세미나 개최 계획 공식 발표. 최근 광주광역시 도서관 현장 붕괴사고 등 잇따른 중대재해를 계기로 <em>건설업 재해예방 거버넌스 재점검</em>. 자문 기업에 원·하청 공동 안전관리 매뉴얼 정비 필요성 대두.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://biz.heraldcorp.com/article/10718784" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">5</span>
+      <div class="card-meta"><span class="tag tag-safe">산재·안전</span><span class="source">헤럴드경제 · 4.16</span></div>
+      <div class="card-title">안전보건공단-중소기업중앙회, 중소기업 '안전 울타리' 공동 구축</div>
+      <div class="card-body">안전보건공단과 중소기업중앙회가 <em>중소기업 안전 울타리 업무협약</em> 체결(4.16). 중소기업 안전관리 인력 부족 현실을 반영하여 <em>공동 안전점검·컨설팅·재정지원 연계</em> 통합 지원. 50인 미만 중소제조업 기획감독과 연계되어 자문 기업 대응 필요.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://econmingle.com/news/parental-leave-unavailable-half-workers-fou/" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">6</span>
+      <div class="card-meta"><span class="tag tag-interp">행정해석 쟁점</span><span class="source">이코노믹 · 4.18</span></div>
+      <div class="card-title">직장인 45.2% "육아휴직 자유롭게 못 써" — 4년째 제자리</div>
+      <div class="card-body">직장갑질119가 4.13 발표한 전국 직장인 1,000명 설문. <em>육아휴직 자유 사용 불가 45.2%·출산휴가 불가 40.4%</em>. 2023년 이후 4년간 개선 없음. 장미 노무사 "<em>출산휴가·육아휴직 사용 이유 괴롭힘을 불이익 처우로 명확 규정</em> 필요"(남녀고용평등법 제19조의3 실효성 제고 주장). 자문기업 <em>모성보호 제도 운용 실태 재점검</em> 필요.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://www.fnnews.com/news/202604180701286847" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">7</span>
+      <div class="card-meta"><span class="tag tag-union">집단적 노사관계</span><span class="source">파이낸셜뉴스 · 4.18</span></div>
+      <div class="card-title">삼성, 개인정보 유출 직원 고소 — 사내시스템 2만 회 접속 혐의</div>
+      <div class="card-body">삼성전자는 <em>사내 업무사이트 약 1시간 동안 2만여 회 접속</em>하여 임직원 이름·소속·휴대폰 번호 수집·제3자 전송 혐의로 직원 A씨 고소. 앞서 '노조 미가입자 블랙리스트' 수사의뢰와 별건. <em>개인정보보호법 제59조·제71조(정보주체 동의 없는 수집·제공)</em> 위반 쟁점. 노조 조직사업 과정의 개인정보 처리 한계 판단 분수령.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://biz.heraldcorp.com/article/10706970" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">8</span>
+      <div class="card-meta"><span class="tag tag-safe">산재·안전</span><span class="source">헤럴드경제 · 4.2</span></div>
+      <div class="card-title">봄철 지붕공사 '추락주의보' — 노동부, 4월 한 달 집중점검</div>
+      <div class="card-body">고용노동부가 지붕·태양광 공사 대상 4.1~4.30 집중점검 주간 운영. 최근 5년 건설업 사망사고의 <em>약 10%가 지붕·태양광 공사</em>, 봄·가을에 60% 집중. <em>공사금액 1억 미만 초소규모 현장에서 약 65% 발생, 70% 이상은 추락방호망·안전대 부착설비 등 기본 안전조치 없이</em> 이루어진 것으로 나타남. 한전·에너지공단과 공사정보 공유 병행.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://www.dominilbo.com/news/articleView.html?idxno=263281" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">9</span>
+      <div class="card-meta"><span class="tag tag-safe">산재·안전</span><span class="source">충청도민일보 · 3.17</span></div>
+      <div class="card-title">음성 퇴비공장 70대 근로자 지붕 추락사망 — 외주업체 '안전 사각'</div>
+      <div class="card-body">3.16 음성군 삼성면 퇴비 제조공장에서 70대 근로자 A씨가 <em>지붕 차광막 철거작업 중 약 6m 아래로 추락, 심정지로 사망</em>. A씨는 외주업체 소속, 해당 사업장은 5인 이상 근무 <em>중대재해처벌법 적용 대상</em>. 노동계 "외주업체·단기 근로자 투입 현장에서 안전관리 사각지대 반복" 지적. <em>원청의 도급인 안전보건조치 의무(산업안전보건법 제63조)</em> 위반 여부 수사 필수.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://www.news1.kr/economy/employment-labor/6122838" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">10</span>
+      <div class="card-meta"><span class="tag tag-safe">산재·안전</span><span class="source">뉴스1 · 4.2</span></div>
+      <div class="card-title">중대재해 8년간 6,032건 SIF 공개 — 제조 '끼임' 건설 '추락' 최다</div>
+      <div class="card-body">고용노동부·안전보건공단이 2016~2023년 중대재해 <em>6,032건의 고위험요인(SIF) 분석 정보를 4.2 산업안전포털·공공데이터포털 공개</em>. <em>제조업은 정비·청소 등 비정형작업 중 설비 끼임 262건</em>, 건설업은 지붕·판넬 설치 등 외부마감 추락 158건이 최다. 자문기업 <em>위험성평가(산업안전보건법 제36조)</em>에 직접 활용 가능. 중대재해처벌법상 경영책임자 안전보건확보의무 이행 근거자료로 활용 권고.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+
+    <a class="card main-card" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156752269" target="_blank" rel="noopener">
+      <span class="rank-badge rank-blue">11</span>
+      <div class="card-meta"><span class="tag tag-policy">정책/입법</span><span class="source">고용노동부 · 4.1</span></div>
+      <div class="card-title">산재예방 아이디어 숏폼 영상 공모전 — 4.1~5.15 접수</div>
+      <div class="card-body">고용노동부·한국산업안전보건공단·매일경제신문사가 공동 주최. <em>"내 일터 안전하게, 내일 더 행복하게"</em> 주제로 숏폼 영상 공모(4.1~5.15). 국민 참여형 <em>산재예방 문화 확산</em> 정책 프로그램. 자문기업 안전보건경영 홍보 활용 가능.</div>
+      <div class="card-footer"><span class="read-more">원문 보기 →</span></div>
+    </a>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-title">간단 소식</div>
+
+    <a class="brief-card" href="https://www.mt.co.kr/economy/2026/04/16/2026041614222659896" target="_blank" rel="noopener">
+      <div class="brief-meta"><span class="brief-tag tag-safe">안전</span><span class="brief-source">머니투데이 · 4.16</span></div>
+      <div class="brief-headline">김영훈 장관, 안전보건공단 패트롤·지방관서 감독과 '지킴이' 활동 연계 방침</div>
+    </a>
+
+    <a class="brief-card" href="https://zdnet.co.kr/view/?no=20260419093440" target="_blank" rel="noopener">
+      <div class="brief-meta"><span class="brief-tag tag-wage">성과급</span><span class="brief-source">ZDNet · 4.19</span></div>
+      <div class="brief-headline">삼성 "메모리 1인당 5.4억 성과급" 제안에도 노조 거부 — 영업이익 15% 재원 명문화 요구</div>
+    </a>
+
+    <a class="brief-card" href="https://www.ngonews.kr/news/articleView.html?idxno=227542" target="_blank" rel="noopener">
+      <div class="brief-meta"><span class="brief-tag tag-safe">안전</span><span class="brief-source">한국NGO신문 · 4.2</span></div>
+      <div class="brief-headline">류현철 산업안전보건본부장 "사고사례 정보 활용해 고위험요인 선제 개선" 당부</div>
+    </a>
+  </div>
+
+  <div class="footer">
+    <div class="footer-mark"></div>
+    <div class="footer-slogan">어렵고 복잡한 노동문제 <b>청아노무법인</b>과 함께 하세요</div>
+    <div class="footer-intro">
+      <b>20년 이상 실무경력</b>을 갖춘 최고의 전문가들이<br>
+      축적된 <b>노하우(Know-how)</b>로 <b>현장 중심·Solution 중심</b>의<br>
+      컨설팅을 제공합니다.
+    </div>
+
+    <div class="services-block">
+      <div class="service-item">
+        <span class="service-name">노동법률자문</span>
+        <span class="service-detail">각종 노동문제 상시 노무자문, 노동법률 검토 의견서</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">급여아웃소싱</span>
+        <span class="service-detail">근로계약서·임금체계·임금대장·4대보험 신고대행</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">노동사건대리</span>
+        <span class="service-detail">임금체불·체당금·부당해고·직장 내 괴롭힘·성희롱</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">인사제도정비</span>
+        <span class="service-detail">장시간근로개선·평가제도·장년고용·일터혁신컨설팅</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">산재보험대리</span>
+        <span class="service-detail">최초요양·장해급여·유족급여·심사재심사 이의신청</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">손해사정지원</span>
+        <span class="service-detail">산재초과손해액 평가·근재·자동차·단체보험 손해사정</span>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-row">
+        <div class="contact-info">
+          <div class="contact-line1">
+            <span class="contact-city">부산</span>
+            <span class="contact-person">공인노무사·손해사정사 <b>이진우</b></span>
+          </div>
+          <a href="tel:0518534421" class="contact-num">051-853-4421</a>
+        </div>
+        <a href="tel:01091144972" class="contact-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+          전화연결
+        </a>
+      </div>
+      <div class="contact-row">
+        <div class="contact-info">
+          <div class="contact-line1">
+            <span class="contact-city">경남</span>
+            <span class="contact-person">공인노무사 <b>신연옥</b></span>
+          </div>
+          <a href="tel:0556374421" class="contact-num">055-637-4421</a>
+        </div>
+        <a href="tel:01085508647" class="contact-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+          전화연결
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-signature">
+      <div class="footer-firm-name">청아노무법인</div>
+      <div class="footer-copy">매일 업데이트 · 2026 ©</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
