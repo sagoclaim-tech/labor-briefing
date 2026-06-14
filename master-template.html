@@ -88,6 +88,14 @@
   .footer-signature{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
   .footer-firm-name{font-size:18px;font-weight:900;color:var(--firm-blue);letter-spacing:-.5px;margin-bottom:6px;line-height:1.2}
   .footer-copy{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted);letter-spacing:.3px}
+
+  .subscribe-cta{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 14px;margin-bottom:14px;text-align:center}
+  .subscribe-cta-label{font-size:12.5px;font-weight:700;color:var(--text-primary);letter-spacing:-.3px;margin-bottom:11px;line-height:1.5}
+  .subscribe-cta-label b{color:var(--firm-blue)}
+  .subscribe-btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;background:var(--firm-blue);color:#fff !important;font-size:13.5px;font-weight:700;padding:13px 14px;border-radius:24px;text-decoration:none;letter-spacing:-.3px;transition:background .15s}
+  .subscribe-btn:hover{background:var(--firm-blue-dark)}
+  .subscribe-btn svg{width:16px;height:16px;flex-shrink:0}
+  .subscribe-note{font-size:10.5px;color:var(--text-muted);letter-spacing:-.2px;margin-top:9px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -202,6 +210,15 @@
         <span class="service-name">손해사정지원</span>
         <span class="service-detail">산재초과손해액 평가·근재·자동차·단체보험 손해사정</span>
       </div>
+    </div>
+
+    <div class="subscribe-cta">
+      <div class="subscribe-cta-label">매일 아침 <b>노동뉴스 데일리 브리핑</b>을<br>무료로 받아보세요</div>
+      <a href="http://pf.kakao.com/_xkxfgCX/friend" target="_blank" rel="noopener" class="subscribe-btn" onclick="gtag('event','subscribe_click',{'method':'kakao_channel'})">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.58 2 10.99c0 2.84 1.9 5.33 4.76 6.74-.21.77-.76 2.79-.87 3.22-.14.54.2.53.41.39.17-.11 2.66-1.81 3.74-2.55.63.09 1.28.14 1.96.14 5.52 0 10-3.58 10-7.99C22 6.58 17.52 3 12 3z"/></svg>
+        카카오톡 채널 추가하고 구독하기
+      </a>
+      <div class="subscribe-note">채널 추가만 하면 평일(월~금) 매일 아침 브리핑을 보내드립니다</div>
     </div>
 
     <div class="contact-block">
