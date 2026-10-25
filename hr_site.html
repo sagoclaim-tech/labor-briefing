@@ -1,0 +1,169 @@
+<style id="ca-hrc-css">
+.ca-hrc .hr-data{display:none!important}
+.ca-hrc .hr-intro-link{display:inline-block;margin-top:18px;padding:10px 22px;border:1px solid #1f6fae;border-radius:24px;color:#1f6fae;font-size:15px;font-weight:600;text-decoration:none;background:#fff}
+.ca-hrc .hr-intro-link:hover{background:#1f6fae;color:#fff}
+.hr-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.hr-tabs button{border:1px solid #e2e7ee;background:#fff;color:#3a3a3a;border-radius:22px;padding:9px 16px;font-size:15px;cursor:pointer;font-family:inherit}
+.hr-tabs button.on{background:#1f6fae;border-color:#1f6fae;color:#fff;font-weight:700}
+.hr-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hr-card{display:flex;flex-direction:column;gap:10px;text-align:left;background:#fff;border:1px solid #e2e7ee;border-radius:14px;padding:22px 20px 20px;color:#3a3a3a;text-decoration:none!important;transition:border-color .15s,transform .15s;min-width:0}
+.hr-card:hover{border-color:#1f6fae;transform:translateY(-2px)}
+.hr-card .top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px}
+.hr-chip{display:inline-block;background:#f0f6fc;color:#1f6fae;border-radius:14px;padding:4px 10px;font-weight:700;font-size:12.5px}
+.hr-yr{color:#7b8592}
+.hr-card h3{margin:0;font-size:18px;line-height:1.45;color:#222;letter-spacing:-.6px;font-weight:700}
+.hr-card .ind{font-size:14px;color:#7b8592}
+.hr-card .ind b{color:#222}
+.hr-card .tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.hr-card .tg span{font-size:12.5px;color:#3a3a3a;background:#f4f7fb;border-radius:6px;padding:3px 8px}
+.hr-more{display:flex;justify-content:center;margin:26px 0 0}
+.hr-btn{display:inline-block;border:0;background:linear-gradient(#2f86c8,#16609e);color:#fff!important;border-radius:28px;padding:14px 30px;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none!important;font-family:inherit}
+.hr-btn.ghost{background:#fff;color:#1f6fae!important;border:1px solid #1f6fae}
+.hr-cta{margin:56px 0 90px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#f4f7fb;border-radius:16px;padding:28px 30px}
+.hr-cta p{margin:0;font-size:18px;color:#222;line-height:1.6}
+.hr-cta p small{display:block;color:#7b8592;font-size:14px}
+@media (max-width:1023px){.hr-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.hr-list{grid-template-columns:1fr}.hr-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.hr-tabs button{flex:0 0 auto}.hr-cta{padding:22px 20px}}
+/* 컨설팅 신청 */
+.ca-hra .cc-grid{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1023px){.ca-hra .cc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.ca-hra .cc-grid{grid-template-columns:1fr}}
+</style>
+<script id="ca-hrc-js">
+(function(){
+ function esc(s){return String(s==null?'':s).replace(/[<>"]/g,function(c){return {'<':'\u0026lt;','>':'\u0026gt;','"':'\u0026quot;'}[c];});}
+ var TABS=['근로시간·근무체계','임금체계','평가체계','장년고용안정','평생학습','고용문화·고용구조','유연·재택근무','직무·NCS','재취업지원','산업일자리전환','혁신파트너십','노무관리 진단'];
+ function list(){
+  var box=document.querySelector('.ca-hrc'); if(!box)return;
+  var dEl=box.querySelector('.hr-data'); var D=[]; try{D=JSON.parse(dEl.textContent);}catch(e){}
+  var root=document.createElement('div'); box.appendChild(root);
+  var st={type:'전체',open:false}; try{var sv=JSON.parse(sessionStorage.getItem('ca_hrc')||'{}'); if(sv.type)st=sv;}catch(e){}
+  function render(){
+   var has={}; D.forEach(function(c){c.cats.forEach(function(k){has[k]=1;});});
+   var shown=D.filter(function(c){return st.type==='전체'||c.cats.indexOf(st.type)>-1;});
+   var LIM=6;
+   var h='<div class="hr-tabs">'+['전체'].concat(TABS.filter(function(t){return has[t];})).map(function(t){return '<button type="button" data-t="'+t+'" class="'+(st.type===t?'on':'')+'">'+t+'</button>';}).join('')+'</div>';
+   h+='<div class="hr-list">'+shown.map(function(c,i){var hid=i>=LIM;return '<a class="hr-card'+(hid?' xtra':'')+'"'+(hid && !st.open?' style="display:none"':'')+' href="/bbs/board.php?bo_table=hrcase'+String.fromCharCode(38)+'wr_id='+c.id+'"><div class="top"><span class="hr-chip">'+esc(st.type!=='전체'?st.type:c.cats[0])+'</span><span class="hr-yr">'+c.y+'</span></div><h3>'+esc(c.t)+'</h3><div class="ind"><b>'+esc(c.n)+'</b> · '+esc(c.ind)+'</div><div class="tg">'+(c.tg||[]).slice(0,3).map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div></a>';}).join('')+'</div>';
+   if(shown.length>LIM)h+='<div class="hr-more"><button type="button" class="hr-btn ghost" id="hrMore">'+(st.open?'접기':'사례 더 보기')+'</button></div>';
+   h+='<div class="hr-cta"><p>우리 회사에 맞는 인사노무 체계가 필요하신가요?<small>정부지원 컨설팅 활용 가능 여부까지 함께 검토해 드립니다.</small></p><a class="hr-btn" href="/bbs/content.php?co_id=hrapply">컨설팅 신청</a></div>';
+   root.innerHTML=h;
+   root.querySelectorAll('[data-t]').forEach(function(b){b.onclick=function(){st.type=b.dataset.t;st.open=false;save();render();};});
+   var mb=document.getElementById('hrMore'); if(mb)mb.onclick=function(){st.open=!st.open;save();root.querySelectorAll('.xtra').forEach(function(x){x.style.display=st.open?'':'none';});mb.textContent=st.open?'접기':'사례 더 보기';if(!st.open)window.scrollTo(0,root.getBoundingClientRect().top+scrollY-120);};
+   root.querySelectorAll('.hr-card').forEach(function(a){a.addEventListener('click',function(){st.y=scrollY;save();});});
+  }
+  function save(){try{sessionStorage.setItem('ca_hrc',JSON.stringify(st));}catch(e){}}
+  render();
+  if(st.y){var y=st.y; delete st.y; save(); setTimeout(function(){window.scrollTo(0,y);},60);}
+ }
+ function board(){
+  if(!/bo_table=hrcase/.test(location.search))return;
+  if(!/wr_id=/.test(location.search) && /\/bbs\/board\.php/.test(location.pathname)){location.replace('/bbs/content.php?co_id=hrconsult');return;}
+  document.querySelectorAll('a[href*="bo_table=hrcase"]').forEach(function(a){if(!/wr_id=|write\.php|delete|update/.test(a.getAttribute('href')))a.setAttribute('href','/bbs/content.php?co_id=hrconsult');});
+ }
+ function init(){list();board();}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<script id="ca-hra-js">
+(function(){
+ var STAFF={jung:{n:'정혁진',b:'consult_jung',o:'청아노무법인 서울 대표',tel:'010-9924-6431'},shin:{n:'신연옥',b:'consult_shin',o:'청아노무법인 거제 대표',tel:'010-8550-8647'}};
+ var REG=[['sg','서울·경기','jung'],['bug','부산·울산·경남','shin'],['etc','기타 지역','shin']];
+ var FIELDS=[['근로시간·근무체계','장시간근로 개선, 교대제, 근로체계 개편'],['임금체계','직무급·숙련급, 임금체계 개편'],['평가체계','성과·역량 평가, KPI·MBO'],['장년고용안정','정년 후 재고용, 임금피크, 숙련 전수'],['평생학습','학습조직, 사내 교육체계'],['고용문화·고용구조','비정규직 전환, 조직문화 개선'],['유연·재택근무','시간선택제, 선택근무, 재택근무'],['직무·NCS','직무분석, NCS 직무기술서'],['재취업지원','재취업지원서비스 의무 이행'],['산업일자리전환','사업전환, 인력 재배치'],['기타','그 밖의 인사노무 컨설팅']];
+ var Q=[['회사명 (선택)','text',''],['업종','text','예: 자동차부품 제조업'],['상시근로자 수','sel',['30인 미만','30~99인','100~299인','300인 이상']],['노동조합 / 노사협의회','sel',['노동조합 있음','노사협의회만 있음','둘 다 없음']],['희망 시기','sel',['1개월 이내','3개월 이내','올해 안','미정']],['정부지원 컨설팅 경험','sel',['있음','없음','잘 모름']]];
+ var KEY='ca_hrapply';
+ function esc(s){return String(s||'').replace(/[<>"]/g,function(c){return {'<':'\u0026lt;','>':'\u0026gt;','"':'\u0026quot;'}[c];});}
+ function load(){try{return JSON.parse(sessionStorage.getItem(KEY)||'{}');}catch(e){return {};}}
+ function save(s){try{sessionStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+ function steps(cur){var n=['컨설팅 분야','사업장 현황','지역','자료 첨부','연락처'];return '<ol class="cc-steps">'+n.map(function(x,i){return '<li class="'+(i+1<cur?'done':(i+1===cur?'on':''))+'"><span>'+(i+1)+'</span><em>'+x+'</em></li>';}).join('')+'</ol>';}
+ function reg(r){return REG.filter(function(x){return x[0]===r;})[0];}
+ function staffHtml(r){var st=STAFF[reg(r)[2]];return '<div class="cc-staff"><span>담당 노무사</span><div class="cc-staff-list"><p><strong>'+st.n+' 노무사</strong><em>'+st.o+'</em></p></div></div>';}
+ function startPage(root){
+  var s=load(); if(location.hash!=='#edit')s={ans:{}}; s.ans=s.ans||{};
+  function render(step){
+   var h=steps(step);
+   if(step===1){h+='<h3 class="cc-q">어떤 컨설팅이 필요하신가요?</h3><div class="cc-grid">'+FIELDS.map(function(f){return '<button type="button" class="cc-card'+(s.field===f[0]?' sel':'')+'" data-f="'+f[0]+'"><strong>'+f[0]+'</strong><span>'+f[1]+'</span></button>';}).join('')+'</div>';}
+   else if(step===2){h+='<h3 class="cc-q">사업장 현황을 알려주세요</h3><p class="cc-hint">아는 범위에서만 적어 주셔도 됩니다.</p><div class="cc-form">';
+    Q.forEach(function(q){var v=s.ans[q[0]]||'';h+='<label class="cc-row"><span>'+q[0]+'</span>';if(q[1]==='sel')h+='<select data-q="'+esc(q[0])+'"><option value="">선택해 주세요</option>'+q[2].map(function(o){return '<option'+(o===v?' selected':'')+'>'+o+'</option>';}).join('')+'</select>';else h+='<input type="text" data-q="'+esc(q[0])+'" value="'+esc(v)+'" placeholder="'+esc(q[2])+'">';h+='</label>';});
+    h+='<label class="cc-row cc-full"><span>현재 고민과 요청사항</span><textarea data-q="요청사항" rows="5" placeholder="예: 3조 2교대 운영으로 장시간 근로가 많아 근무체계 개편을 검토하고 있습니다.">'+esc(s.ans['요청사항'])+'</textarea></label></div><p class="cc-note">※ 정부지원 컨설팅은 사업장 요건과 모집 일정에 따라 참여 여부가 달라집니다. 신청 내용을 보고 활용 가능한 방법을 함께 안내해 드립니다.</p>';}
+   else if(step===3){h+='<h3 class="cc-q">사업장은 어느 지역에 있나요?</h3><div class="cc-grid cc-grid3">'+REG.map(function(r){return '<button type="button" class="cc-card'+(s.region===r[0]?' sel':'')+'" data-r="'+r[0]+'"><strong>'+r[1]+'</strong></button>';}).join('')+'</div>'+(s.region?staffHtml(s.region):'');}
+   h+='<div class="cc-nav">'+(step>1?'<button type="button" class="cc-prev">이전</button>':'<span></span>')+'<button type="button" class="cc-next"'+((step===1 && !s.field)||(step===3 && !s.region)?' disabled':'')+'>'+(step===3?'다음: 자료 첨부':'다음')+'</button></div>';
+   root.innerHTML=h;
+   root.querySelectorAll('[data-f]').forEach(function(b){b.onclick=function(){s.field=b.dataset.f;save(s);render(1);};});
+   root.querySelectorAll('[data-r]').forEach(function(b){b.onclick=function(){s.region=b.dataset.r;save(s);render(3);};});
+   function collect(){root.querySelectorAll('[data-q]').forEach(function(e){s.ans[e.dataset.q]=e.value.trim();});save(s);}
+   var p=root.querySelector('.cc-prev'); if(p)p.onclick=function(){if(step===2)collect();render(step-1);window.scrollTo(0,root.getBoundingClientRect().top+scrollY-120);};
+   root.querySelector('.cc-next').onclick=function(){if(step===2)collect();if(step<3){render(step+1);window.scrollTo(0,root.getBoundingClientRect().top+scrollY-120);return;} s.staff=reg(s.region)[2];save(s);try{sessionStorage.setItem('ca_hr_mode','1');}catch(e){} location.href='/bbs/write.php?bo_table='+STAFF[s.staff].b;};
+  }
+  render(location.hash==='#edit'?(s.field?(s.region?3:2):1):1);
+ }
+ function writePage(bo){
+  var s=load(); var key=bo==='consult_jung'?'jung':'shin';
+  if(!s.field||!s.region||s.staff!==key){try{sessionStorage.removeItem('ca_hr_mode');}catch(e){} location.replace('/bbs/content.php?co_id=hrapply');return;}
+  var f=document.getElementById('fwrite'); if(!f)return;
+  var st=STAFF[key], rg=reg(s.region)[1];
+  document.body.classList.add('cc-writing');
+  var files=[].slice.call(f.querySelectorAll('input[type=file][name="bf_file[]"]'));
+  var cap=f.querySelector('#captcha'), capWrap=cap?cap.closest('li, .write_div, div')||cap:null;
+  var box=document.createElement('div'); box.className='cc-wrap';
+  var sum=Object.keys(s.ans||{}).filter(function(q){return s.ans[q];}).map(function(q){return '<li><b>'+esc(q)+'</b> '+esc(s.ans[q])+'</li>';}).join('');
+  box.innerHTML='<div class="ca-head"><h2>컨설팅 <span>신청</span></h2><p>남겨주신 내용은 <b>담당 노무사에게만 전달</b>되며, 확인 후 연락드립니다.</p></div>'+steps(4)+
+   '<div class="cc-summary">'+staffHtml(s.region)+'<p><b>'+esc(s.field)+'</b> · '+esc(rg)+' <a href="/bbs/content.php?co_id=hrapply#edit">수정</a></p>'+(sum?'<ul>'+sum+'</ul>':'')+'</div>'+
+   '<h3 class="cc-q">참고자료를 올려주세요 <small>(선택)</small></h3><p class="cc-hint">취업규칙, 조직도, 임금 규정, 근무표 등. 파일당 20MB, 최대 5개.</p><div class="cc-files"></div>'+
+   '<h3 class="cc-q">연락처를 남겨주세요</h3><div class="cc-form">'+
+   '<label class="cc-row"><span>담당자 이름 <i>*</i></span><input type="text" id="cc_name" maxlength="20"></label>'+
+   '<label class="cc-row"><span>직책 / 부서</span><input type="text" id="cc_pos" maxlength="30" placeholder="예: 경영지원팀 과장"></label>'+
+   '<label class="cc-row"><span>연락처 <i>*</i></span><input type="tel" id="cc_tel" placeholder="010-0000-0000" maxlength="20"></label>'+
+   '<label class="cc-row"><span>이메일 (선택)</span><input type="email" id="cc_email"></label></div>'+
+   '<div class="cc-agree"><label><input type="checkbox" id="cc_ag1"> <b>[필수]</b> 개인정보 수집·이용에 동의합니다.</label>'+
+   '<div class="cc-terms">수집 항목: 이름, 직책, 연락처, 이메일, 신청 내용 및 첨부자료<br>수집 목적: 컨설팅 상담 접수 및 회신<br>보유 기간: 상담 종료 후 1년 (관련 법령에 따라 보존이 필요한 경우 해당 기간)<br>동의를 거부할 수 있으나, 거부 시 신청이 제한됩니다.</div></div>'+
+   '<h3 class="cc-q cc-capq">자동등록방지</h3><div class="cc-cap"></div><p class="cc-err"></p><div class="cc-nav"><button type="button" class="cc-prev">이전</button><button type="button" class="cc-next cc-submit">컨설팅 신청하기</button></div>';
+  f.parentNode.insertBefore(box,f);
+  var fz=box.querySelector('.cc-files'); files.forEach(function(x,i){var w=document.createElement('label');w.className='cc-file';w.innerHTML='<span>자료 '+(i+1)+'</span>';w.appendChild(x);fz.appendChild(w);});
+  if(capWrap)box.querySelector('.cc-cap').appendChild(capWrap);
+  f.style.display='none';
+  box.querySelector('.cc-prev').onclick=function(){location.href='/bbs/content.php?co_id=hrapply#edit';};
+  var btn=box.querySelector('.cc-submit'), err=box.querySelector('.cc-err');
+  btn.onclick=function(){
+   err.textContent='';
+   var nm=box.querySelector('#cc_name').value.trim(), pos=box.querySelector('#cc_pos').value.trim(), tel=box.querySelector('#cc_tel').value.trim(), em=box.querySelector('#cc_email').value.trim();
+   if(!nm){err.textContent='이름을 입력해 주세요.';return;}
+   if(!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(tel.replace(/\s/g,''))){err.textContent='연락처를 정확히 입력해 주세요.';return;}
+   if(!box.querySelector('#cc_ag1').checked){err.textContent='개인정보 수집·이용에 동의해 주세요.';return;}
+   var ck=document.getElementById('captcha_key'); if(ck && !ck.value.trim()){err.textContent='자동등록방지 숫자를 입력해 주세요.';return;}
+   var tf=tel.replace(/\D/g,'').replace(/^(02|01\d|0\d\d)(\d{3,4})(\d{4})$/,'$1-$2-$3');
+   var lines=['[상담 분야] HR컨설팅: '+s.field,'[지역] '+rg,'[담당] '+st.n+' 노무사','[이름] '+nm+(pos?' ('+pos+')':''),'[연락처] '+tf,'[이메일] '+(em||'-'),''];
+   Object.keys(s.ans||{}).forEach(function(q){if(s.ans[q])lines.push('['+q+'] '+s.ans[q]);});
+   lines.push('','[동의] 개인정보 수집·이용 동의 / '+new Date().toLocaleString('ko-KR'));
+   var tk=(typeof get_write_token==='function')?get_write_token(f.bo_table.value):''; if(!tk){err.textContent='접수 준비 중 문제가 발생했습니다. 새로고침 후 다시 시도해 주세요.';return;}
+   if(!f.token){var ti=document.createElement('input');ti.type='hidden';ti.name='token';f.insertBefore(ti,f.firstChild);} f.token.value=tk;
+   f.wr_name.value=nm; f.wr_password.value='c'+Math.random().toString(36).slice(2,12)+'A1';
+   if(f.wr_email)f.wr_email.value='noreply'+String.fromCharCode(64)+'xn--o80bq8pj4a8ztxwcn2k.com';
+   f.wr_subject.value='[HR컨설팅]['+rg+']['+s.field+'] '+nm+' '+tf;
+   f.wr_content.value=lines.map(function(x){return esc(x);}).join('\n').replace('[연락처] '+tf,'[연락처] <a href="tel:'+tf.replace(/-/g,'')+'" style="font-weight:700;color:#1f6fae">'+tf+'</a>');
+   if(f.html){f.html.checked=true;f.html.value='html2';}
+   if(typeof chk_captcha==='function' && !chk_captcha()){return;}
+   btn.disabled=true; btn.textContent='접수 중입니다...';
+   var fd=new FormData(f); if(ck)fd.set('captcha_key',ck.value);
+   fetch(f.action,{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){return r.text().then(function(t){return {r:r,t:t};});}).then(function(o){
+    if(/wr_id=\d+/.test(o.r.url)||(!/write_update/.test(o.r.url))){
+     try{sessionStorage.removeItem(KEY);sessionStorage.removeItem('ca_hr_mode');}catch(e){}
+     box.innerHTML='<div class="ca-head"><h2>컨설팅 신청이 <span>접수</span>되었습니다</h2><p style="line-height:1.7"><span style="white-space:nowrap"><b style="display:inline">'+esc(st.n)+' 노무사</b>가 내용을 확인한 뒤</span><br><span style="white-space:nowrap">남겨주신 연락처로 연락드리겠습니다.</span></p></div><div class="cc-done"><p>급한 문의는 전화 주시면 바로 안내해 드립니다.</p><a class="cc-call" href="tel:'+st.tel.replace(/-/g,'')+'" style="color:#fff!important;display:inline-flex;flex-direction:column;align-items:center;gap:2px;line-height:1.3;text-decoration:none"><span style="color:#fff!important;font-size:15px;font-weight:500;opacity:.9">'+esc(st.n)+' 노무사</span><span style="color:#fff!important;font-size:21px;font-weight:700;letter-spacing:.5px">'+st.tel+'</span></a><a class="cc-home" href="/">홈으로</a></div>';
+     var hd=document.getElementById('header');var hh=hd?hd.offsetHeight:0;window.scrollTo(0,0);var rt=box.getBoundingClientRect().top;if(rt<hh+24)box.style.paddingTop=(hh+24-rt)+'px';
+    } else {
+     var m=(o.t.match(/alert\(["']([^"']+)/)||[])[1]||'접수 중 문제가 발생했습니다. 다시 시도해 주세요.';
+     err.textContent=m; btn.disabled=false; btn.textContent='컨설팅 신청하기';
+     var ri=document.getElementById('captcha_reload'); if(ri)ri.click();
+    }
+   }).catch(function(){err.textContent='네트워크 오류로 접수하지 못했습니다. 잠시 후 다시 시도해 주세요.';btn.disabled=false;btn.textContent='컨설팅 신청하기';});
+  };
+ }
+ function init(){
+  var q=document.querySelector('.ca-hra .cc-intro');
+  if(q){var root=document.createElement('div');root.id='ca-hrapply';q.parentNode.insertBefore(root,q.nextSibling);startPage(root);return;}
+  var hm=null; try{hm=sessionStorage.getItem('ca_hr_mode');}catch(e){}
+  var m=location.search.match(/bo_table=(consult_(?:jung|shin))/);
+  if(hm && m && /\/bbs\/write\.php/.test(location.pathname) && !/w=u/.test(location.search))writePage(m[1]);
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
