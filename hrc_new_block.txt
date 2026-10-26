@@ -1,0 +1,38 @@
+<script id="ca-hrc-js">
+(function(){
+ function esc(s){return String(s==null?'':s).replace(/[<>"]/g,function(c){return {'<':'\u0026lt;','>':'\u0026gt;','"':'\u0026quot;'}[c];});}
+ var IGS=['제조','조선·해양','항공·방산','의료·복지','공공기관','서비스·기타'];
+ function IG(s){s=s||'';if(/조선|선박|해양/.test(s))return '조선·해양';if(/항공|방산|우주/.test(s))return '항공·방산';if(/병원|의원|의료|복지/.test(s))return '의료·복지';if(/자치단체|시청|공단|공사|교육청|기관|공기업|테크노파크|품질원|연구원/.test(s))return '공공기관';if(/제조|가공|제강|공업/.test(s))return '제조';return '서비스·기타';}
+ var TABS=['근로시간·근무체계','임금체계','평가체계','장년고용안정','평생학습','고용문화·고용구조','유연·재택근무','직무·NCS','재취업지원','산업일자리전환','혁신파트너십','노무관리 진단'];
+ function list(){
+  var box=document.querySelector('.ca-hrc'); if(!box)return;
+  var dEl=box.querySelector('.hr-data'); var D=[]; try{D=JSON.parse(dEl.textContent);}catch(e){}
+  var root=document.createElement('div'); box.appendChild(root);
+  var st={type:'전체',open:false,q:'',yr:'',ig:''}; try{var sv=JSON.parse(sessionStorage.getItem('ca_hrc')||'{}'); if(sv.type)st=sv;}catch(e){}
+  function render(){
+   var has={}; D.forEach(function(c){c.cats.forEach(function(k){has[k]=1;});});
+   var q=(st.q||'').trim().toLowerCase();var shown=D.filter(function(c){if(st.type!=='전체' && c.cats.indexOf(st.type)<0)return false;if(st.yr && String(c.y)!==st.yr)return false;if(st.ig && IG(c.ind)!==st.ig)return false;if(q){var s=(c.t+' '+c.n+' '+c.ind+' '+(c.tg||[]).join(' ')+' '+c.cats.join(' ')).toLowerCase();if(s.indexOf(q)<0)return false;}return true;});var filt=!!(q||st.yr||st.ig);
+   var LIM=filt?9999:6;var yrs=[];D.forEach(function(c){if(yrs.indexOf(c.y)<0)yrs.push(c.y);});yrs.sort(function(a,b){return b-a;});
+   var h='<div class="hr-sch"><input type="search" id="hrQ" placeholder="업종, 키워드로 검색 (예: 교대제, 임금피크, 병원)" value="'+esc(st.q)+'"><select id="hrY"><option value="">전체 연도</option>'+yrs.map(function(y){return '<option'+(String(y)===st.yr?' selected':'')+'>'+y+'</option>';}).join('')+'</select><select id="hrI"><option value="">전체 업종</option>'+IGS.map(function(g){return '<option'+(g===st.ig?' selected':'')+'>'+g+'</option>';}).join('')+'</select>'+(filt?'<button type="button" id="hrR">초기화</button>':'')+'</div>';h+='<div class="hr-tabs">'+['전체'].concat(TABS.filter(function(t){return has[t];})).map(function(t){return '<button type="button" data-t="'+t+'" class="'+(st.type===t?'on':'')+'">'+t+'</button>';}).join('')+'</div>';
+   h+='<div class="hr-list">'+shown.map(function(c,i){var hid=i>=LIM;return '<a class="hr-card'+(hid?' xtra':'')+'"'+(hid && !st.open?' style="display:none"':'')+' href="/bbs/board.php?bo_table=hrcase'+String.fromCharCode(38)+'wr_id='+c.id+'"><div class="top"><span class="hr-chip">'+esc(st.type!=='전체'?st.type:c.cats[0])+'</span><span class="hr-yr">'+c.y+'</span></div><h3>'+esc(c.t)+'</h3><div class="ind"><b>'+esc(c.n)+'</b> · '+esc(c.ind)+'</div><div class="tg">'+(c.tg||[]).slice(0,3).map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div></a>';}).join('')+'</div>'+(shown.length?'':'<p class="hr-none">조건에 맞는 사례가 없습니다. 검색어나 분류를 바꿔 보세요.</p>');
+   if(shown.length>LIM)h+='<div class="hr-more"><button type="button" class="hr-btn ghost" id="hrMore">'+(st.open?'접기':'사례 더 보기')+'</button></div>';
+   h+='<div class="hr-cta"><p>우리 회사에 맞는 인사노무 체계가 필요하신가요?<small>정부지원 컨설팅 활용 가능 여부까지 함께 검토해 드립니다.</small></p><a class="hr-btn" href="/bbs/content.php?co_id=hrapply">컨설팅 신청</a></div>';
+   root.innerHTML=h;
+   root.querySelectorAll('[data-t]').forEach(function(b){b.onclick=function(){st.type=b.dataset.t;st.open=false;save();render();};});
+   var mb=document.getElementById('hrMore'); if(mb)mb.onclick=function(){st.open=!st.open;save();root.querySelectorAll('.xtra').forEach(function(x){x.style.display=st.open?'':'none';});mb.textContent=st.open?'접기':'사례 더 보기';if(!st.open)window.scrollTo(0,root.getBoundingClientRect().top+scrollY-120);};
+   var qi=document.getElementById('hrQ'),tmr;qi.oninput=function(){clearTimeout(tmr);tmr=setTimeout(function(){st.q=qi.value;save();var p=qi.selectionStart;render();var n=document.getElementById('hrQ');n.focus();try{n.setSelectionRange(p,p);}catch(e){}},250);};document.getElementById('hrY').onchange=function(){st.yr=this.value;save();render();};document.getElementById('hrI').onchange=function(){st.ig=this.value;save();render();};var rb=document.getElementById('hrR');if(rb)rb.onclick=function(){st.q='';st.yr='';st.ig='';save();render();};
+   root.querySelectorAll('.hr-card').forEach(function(a){a.addEventListener('click',function(){st.y=scrollY;save();});});
+  }
+  function save(){try{sessionStorage.setItem('ca_hrc',JSON.stringify(st));}catch(e){}}
+  render();
+  if(st.y){var y=st.y; delete st.y; save(); setTimeout(function(){window.scrollTo(0,y);},60);}
+ }
+ function board(){
+  if(!/bo_table=hrcase/.test(location.search))return;
+  if(!/wr_id=/.test(location.search) && /\/bbs\/board\.php/.test(location.pathname)){location.replace('/bbs/content.php?co_id=hrconsult');return;}
+  document.querySelectorAll('a[href*="bo_table=hrcase"]').forEach(function(a){if(!/wr_id=|write\.php|delete|update/.test(a.getAttribute('href')))a.setAttribute('href','/bbs/content.php?co_id=hrconsult');});
+ }
+ function init(){list();board();}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>

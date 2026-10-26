@@ -1,0 +1,6 @@
+.hr-sch{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.hr-sch input{flex:1 1 260px;min-width:0;height:46px;border:1px solid #cfd6de;border-radius:23px;padding:0 18px;font-size:15px;font-family:inherit}
+.hr-sch select{height:46px;border:1px solid #cfd6de;border-radius:23px;padding:0 14px;font-size:15px;background:#fff;font-family:inherit}
+.hr-sch button{height:46px;border:0;border-radius:23px;padding:0 18px;background:#eef1f5;color:#333;font-size:15px;cursor:pointer;font-family:inherit}
+.hr-none{text-align:center;color:#7b8592;padding:40px 0;font-size:16px}
+@media (max-width:640px){.hr-sch select{flex:1 1 40%}}
