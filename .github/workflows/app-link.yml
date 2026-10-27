@@ -1,0 +1,52 @@
+name: 노무수첩 배너 자동 삽입
+
+on:
+  push:
+    branches: [main]
+    paths: ["daily/*.html"]
+  workflow_dispatch:
+    inputs:
+      files:
+        description: "직접 처리할 파일(공백 구분, 예: daily/2026-10-28.html)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: app-link
+  cancel-in-progress: false
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 새로 올라온 브리핑 찾기
+        id: files
+        run: |
+          if [ -n "${{ github.event.inputs.files }}" ]; then
+            FILES="${{ github.event.inputs.files }}"
+          else
+            BEFORE="${{ github.event.before }}"
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              FILES=$(git diff-tree --no-commit-id --name-only -r --diff-filter=AM HEAD -- 'daily/*.html')
+            else
+              FILES=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'daily/*.html')
+            fi
+          fi
+          echo "list=$(echo $FILES)" >> "$GITHUB_OUTPUT"
+      - name: 배너·계산기 버튼 넣기
+        if: steps.files.outputs.list != ''
+        run: python3 tools/inject_app.py ${{ steps.files.outputs.list }}
+      - name: 저장
+        run: |
+          if git diff --quiet; then echo "변경 없음"; exit 0; fi
+          git config user.name "sagoclaim-tech"
+          git config user.email "sagoclaim@hanmail.net"
+          git add daily
+          git commit -m "노무수첩 배너 자동 삽입"
+          git pull --rebase origin main
+          git push origin main
