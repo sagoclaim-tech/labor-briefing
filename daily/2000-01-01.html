@@ -97,6 +97,14 @@
   .subscribe-btn:hover{background:var(--firm-blue-dark)}
   .subscribe-btn svg{width:16px;height:16px;flex-shrink:0}
   .subscribe-note{font-size:10.5px;color:var(--text-muted);letter-spacing:-.2px;margin-top:9px;line-height:1.5}
+  /* 청아 노무수첩 연결 (APP-LINK) */
+  .app-chip{display:flex;justify-content:flex-end;margin:-4px 2px 12px;text-decoration:none}
+  .app-chip span{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--firm-blue);background:#EAF1F9;border:1px solid #CFDDF0;border-radius:20px;padding:6px 12px;letter-spacing:-.2px}
+  .app-banner{display:block;margin-top:28px;padding:18px 18px 16px;background:linear-gradient(135deg,#1A4FA0,#123A78);border-radius:14px;color:#fff;text-decoration:none}
+  .app-banner-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;opacity:.75}
+  .app-banner-title{font-size:17px;font-weight:900;margin-top:4px;letter-spacing:-.4px}
+  .app-banner-desc{font-size:12.5px;line-height:1.6;margin-top:6px;opacity:.92}
+  .app-banner-btn{display:inline-block;margin-top:12px;background:#fff;color:#1A4FA0;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:20px}
 </style>
 </head>
 <body>
@@ -267,6 +275,14 @@
 
   <!-- ▲▲▲ 매일 교체 영역 END : 본문 카드 ▲▲▲ -->
 
+  <!-- APP-LINK v1 -->
+  <a class="app-banner" href="https://app.xn--o80bq8pj4a8ztxwcn2k.com/?utm_source=briefing&amp;utm_medium=banner" target="_blank" rel="noopener">
+    <div class="app-banner-label">FREE LABOR APP</div>
+    <div class="app-banner-title">청아 노무수첩</div>
+    <div class="app-banner-desc">최저임금·실업급여·육아휴직 급여·퇴직금·대지급금 계산기와<br>개정 법령·시행 예정 제도, 고용지원금, 행정해석을 한곳에서 확인하세요.</div>
+    <span class="app-banner-btn">무료로 열기</span>
+  </a>
+
   <!-- ============================================================ -->
   <!-- 푸터 : 고정 영역 — 절대 수정하지 않음                          -->
   <!-- ============================================================ -->
@@ -351,5 +367,6 @@
   </div>
 
 </div>
+<script src="../assets/app-link.js?v=1" defer></script>
 </body>
 </html>
