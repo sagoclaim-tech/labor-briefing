@@ -68,8 +68,10 @@
     }
 
     /* 하단 배너 */
+    /* 브리핑 본문에 고정 배너(마스터 템플릿, 2026-10-28~)가 이미 있으면 중복으로 붙이지 않는다 */
+    var staticBanner = document.querySelector('a[href^="' + APP + '"]:not(.app-chip)');
     var footer = document.querySelector(".footer");
-    if (footer) {
+    if (footer && !staticBanner) {
       var b = el("a", "app-banner");
       b.href = APP + "?utm_source=briefing&utm_medium=banner";
       b.target = "_blank";
