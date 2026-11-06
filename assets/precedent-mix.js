@@ -77,7 +77,12 @@
         });
         body.innerHTML = "";
         keep.forEach(function (tr) { body.appendChild(tr); });
-        out.forEach(function (tr) { body.appendChild(document.importNode(tr, true)); });
+        out.forEach(function (tr, n) {
+          var row = document.importNode(tr, true);
+          var num = row.querySelector(".td_num2");
+          if (num) num.textContent = String(total - (page - 1) * PER - n);
+          body.appendChild(row);
+        });
       }
       show();
     });
