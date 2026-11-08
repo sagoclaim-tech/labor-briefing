@@ -2,8 +2,7 @@
    - 홈페이지 환경설정(cf_add_script)에서 불러온다. 글 보기 화면에서만 동작한다.
    1) 글마다 고유한 설명문(meta description, og:description)과 og:title, og:url을 넣는다.
    2) 대표 주소(canonical)를 bo_table과 wr_id만 남긴 주소로 지정해 같은 글의 여러 주소가 하나로 묶이게 한다.
-   3) 사례 분야에 맞는 업무 안내 페이지로 가는 '관련 업무 안내' 링크를 글 끝에 붙인다(내부 링크).
-   4) HR컨설팅 사례의 # 태그를 같은 주제의 사례 검색으로 연결한다. */
+   3) 사례 분야에 맞는 업무 안내 페이지로 가는 '관련 업무 안내' 링크를 글 끝에 붙인다(내부 링크). */
 (function () {
   var q = new URLSearchParams(location.search);
   var bo = q.get("bo_table"), id = q.get("wr_id");
@@ -84,21 +83,4 @@
     con.appendChild(box);
   }
 
-  // HR컨설팅 # 태그를 같은 주제 사례 검색으로 연결
-  if (bo === "hrcase") {
-    Array.prototype.slice.call(con.querySelectorAll("span")).forEach(function (s) {
-      if (s.children.length) return;
-      var t = clean(s.textContent);
-      if (!/^#\S/.test(t) || s.querySelector("a") || s.closest("a")) return;
-      var kw = t.slice(1).split(/[·\s]/)[0];
-      if (!kw) return;
-      var a = document.createElement("a");
-      a.href = "/bbs/board.php?bo_table=hrcase" + AMP + "sfl=wr_subject%7C%7Cwr_content" + AMP + "sop=and" + AMP + "stx=" + encodeURIComponent(kw);
-      a.textContent = t;
-      a.style.color = "inherit";
-      a.style.textDecoration = "none";
-      s.textContent = "";
-      s.appendChild(a);
-    });
-  }
 })();
