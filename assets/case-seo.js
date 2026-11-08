@@ -40,11 +40,13 @@
     if (!m) { m = document.createElement("meta"); m.setAttribute(attr, key); document.head.appendChild(m); }
     m.setAttribute("content", val);
   }
-  meta("name", "description", desc);
-  meta("property", "og:title", title + " | 청아노무법인");
-  meta("property", "og:description", desc);
-  meta("property", "og:url", url);
-  meta("property", "og:type", "article");
+  // 서버(extend/ca_seo_meta.extend.php)가 이미 넣었으면 그 값을 그대로 둔다.
+  var serverMeta = !!document.head.querySelector('link[rel="canonical"]');
+  if (!serverMeta) meta("name", "description", desc);
+  if (!serverMeta) meta("property", "og:title", title + " | 청아노무법인");
+  if (!serverMeta) meta("property", "og:description", desc);
+  if (!serverMeta) meta("property", "og:url", url);
+  if (!serverMeta) meta("property", "og:type", "article");
   var can = document.head.querySelector('link[rel="canonical"]');
   if (!can) { can = document.createElement("link"); can.rel = "canonical"; document.head.appendChild(can); }
   can.href = url;
