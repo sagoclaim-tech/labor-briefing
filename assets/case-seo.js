@@ -71,7 +71,17 @@
     links = [P("advisory", "인사노무 자문 안내")];
   }
   links.push({ href: "/bbs/content.php?co_id=consult", name: "상담신청" });
-  if (!con.querySelector(".ca-related")) {
+  // 본문(연락처 박스 포함)에 이미 같은 페이지로 가는 링크가 있으면 빼고, 남는 것이 없으면 박스를 만들지 않는다.
+  var have = Array.prototype.slice.call(con.querySelectorAll("a[href]")).map(function (a) {
+    var m = a.getAttribute("href").match(/co_id=([\w-]+)|bo_table=(\w+)(?!.*wr_id)/);
+    return m ? (m[1] || m[2]) : "";
+  });
+  links = links.filter(function (l) {
+    var m = l.href.match(/co_id=([\w-]+)|bo_table=(\w+)/);
+    return !(m && have.indexOf(m[1] || m[2]) >= 0);
+  });
+  if (links.length === 1 && /co_id=consult/.test(links[0].href)) links = [];
+  if (links.length && !con.querySelector(".ca-related")) {
     var box = document.createElement("div");
     box.className = "ca-related";
     box.setAttribute("style", "margin-top:24px;padding:14px 16px;border-top:1px solid #d9e0e8;font-size:15px;line-height:1.9;");
