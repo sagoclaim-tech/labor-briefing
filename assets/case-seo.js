@@ -81,6 +81,8 @@
     return !(m && have.indexOf(m[1] || m[2]) >= 0);
   });
   if (links.length === 1 && /co_id=consult/.test(links[0].href)) links = [];
+  // 본문 끝에 연락처 박스(전화 링크)가 있는 글은 안내가 겹치므로 관련 업무 안내를 붙이지 않는다.
+  if (con.querySelector('a[href^="tel:"]')) links = [];
   if (links.length && !con.querySelector(".ca-related")) {
     var box = document.createElement("div");
     box.className = "ca-related";
