@@ -1,0 +1,42 @@
+# 노동뉴스 브리핑이 올라오면 청아 노무수첩 앱의 알림 구독 기기에 바로 알림(웹 푸시)을 보낸다.
+# - daily/*.html이 main에 올라올 때 실행. 이번 변경으로 본문이 처음 채워진 브리핑만 알린다(tools/push_news.py).
+# - Secret PUSH_CONFIG가 필요하다(cheonga-labor 저장소와 같은 값). 없으면 보내지 않는다.
+# - 수동 실행: date에 날짜(예: 2026-11-17)를 넣으면 그 날짜 브리핑 알림을 다시 보낸다.
+name: 노동뉴스 새 소식 알림
+
+on:
+  push:
+    branches: [main]
+    paths: ["daily/*.html"]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "다시 알릴 브리핑 날짜(예: 2026-11-17)"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: push-news
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 알림 발송
+        env:
+          PUSH_CONFIG: ${{ secrets.PUSH_CONFIG }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          DATE: ${{ github.event.inputs.date }}
+        run: |
+          pip install --quiet pywebpush requests
+          if [ -n "$DATE" ]; then python3 tools/push_news.py --date "$DATE"; else python3 tools/push_news.py "$BEFORE" "$AFTER"; fi
